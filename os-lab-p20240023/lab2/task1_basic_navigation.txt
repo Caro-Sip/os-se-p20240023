@@ -1,0 +1,63 @@
+/home/syphon
+total 136
+drwxr-x--- 25 syphon syphon  4096 Mar 17 11:19 .
+drwxr-xr-x  3 root   root    4096 Mar 10 23:59 ..
+-rw-------  1 syphon syphon 12356 Mar 17 14:11 .bash_history
+-rw-r--r--  1 syphon syphon   220 Mar 10 23:59 .bash_logout
+-rw-r--r--  1 syphon syphon  3771 Mar 10 23:59 .bashrc
+drwx------ 23 syphon syphon  4096 Mar 15 13:51 .cache
+drwx------ 22 syphon syphon  4096 Mar 17 11:42 .config
+drwx------  3 syphon syphon  4096 Mar 12 18:51 .copilot
+drwxrwxr-x  6 syphon syphon  4096 Mar 12 19:12 dclab_ws
+drwxr-xr-x  2 syphon syphon  4096 Mar 17 11:42 Desktop
+drwxr-xr-x  5 syphon syphon  4096 Mar 17 14:11 Documents
+drwxrwxr-x  3 syphon syphon  4096 Mar 12 18:51 .dotnet
+drwxr-xr-x  5 syphon syphon  4096 Mar 16 23:57 Downloads
+-rw-rw-r--  1 syphon syphon    77 Mar 15 14:52 .gitconfig
+drwx------  2 syphon syphon  4096 Mar 17 14:11 .gnupg
+drwxrwxr-x  6 syphon syphon  4096 Mar 17 14:04 ITC-OS-2026
+drwx------  3 syphon syphon  4096 Mar 11 07:03 .local
+drwx------  3 syphon syphon  4096 Mar 13 16:47 .mozilla
+drwxr-xr-x  2 syphon syphon  4096 Mar 11 07:03 Music
+-rw-r--r--  1 syphon syphon   310 Mar 11 00:07 .pam_environment
+drwxr-xr-x  3 syphon syphon  4096 Mar 12 19:47 Pictures
+drwx------  3 syphon syphon  4096 Mar 12 18:11 .pki
+-rw-r--r--  1 syphon syphon   807 Mar 10 23:59 .profile
+drwxr-xr-x  2 syphon syphon  4096 Mar 11 07:03 Public
+drwxrwxr-x  3 syphon syphon  4096 Mar 12 18:05 .ros
+drwx------  6 syphon syphon  4096 Mar 12 18:11 snap
+drwx------  2 syphon syphon  4096 Mar 17 13:21 .ssh
+-rw-r--r--  1 syphon syphon     0 Mar 11 00:20 .sudo_as_admin_successful
+drwxr-xr-x  2 syphon syphon  4096 Mar 11 07:03 Templates
+drwx------  6 syphon syphon  4096 Mar 13 16:47 .thunderbird
+drwxr-xr-x  2 syphon syphon  4096 Mar 11 07:03 Videos
+drwxrwxr-x  4 syphon syphon  4096 Mar 12 18:49 .vscode
+------ Root Directory(/) -------
+/
+bin
+boot
+cdrom
+dev
+etc
+home
+lib
+lib32
+lib64
+libx32
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+swapfile
+sys
+tmp
+usr
+var
+------ Back home(~) --------
+/home/syphon

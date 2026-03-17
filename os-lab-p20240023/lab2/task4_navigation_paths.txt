@@ -1,0 +1,30 @@
+=== Task 4: Navigation with Paths ===
+--- Absolute path HR/polocies ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/hr/policies
+leave_policy.txt
+remote_work.txt
+--- Up to hr/ ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/hr
+--- Relative path to onboading/ ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/hr/onboarding
+checklist.txt
+welcome_guide.txt
+--- Sideways to engineering/frontend/ ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/engineering/frontend
+app_config.txt
+index.html
+styles.css
+--- Up two levels to techcorp/ ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp
+--- Absolute path to marketing/campaigns/ ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/marketing/campaigns
+q1_launch.txt
+social_media.txt
+--- cd - (back to previous directory) ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp
+--- Challenge Navigation ---
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/engineering/backend
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/marketing/assets
+/usr/bin
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/marketing/assets
+/home/syphon/Documents/os-se-p20240023/os-lab-p20240023/lab2/techcorp/hr/onboarding
