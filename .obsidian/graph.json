@@ -1,0 +1,44 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "tag:#ITC  ",
+      "color": {
+        "a": 1,
+        "rgb": 9097983
+      }
+    },
+    {
+      "query": "tag:#Computer  ",
+      "color": {
+        "a": 1,
+        "rgb": 7536895
+      }
+    },
+    {
+      "query": "tag:#How_To ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": -0.5,
+  "nodeSizeMultiplier": 1.72609212802768,
+  "lineSizeMultiplier": 1.92266435986159,
+  "collapse-forces": false,
+  "centerStrength": 0.205882352941176,
+  "repelStrength": 10.5536332179931,
+  "linkStrength": 1,
+  "linkDistance": 404,
+  "scale": 0.15456170699442706,
+  "close": false
+}

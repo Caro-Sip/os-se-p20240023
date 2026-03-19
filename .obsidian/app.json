@@ -1,0 +1,20 @@
+{
+  "showUnsupportedFiles": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./",
+  "promptDelete": false,
+  "autoConvertHtml": false,
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "readableLineLength": true,
+  "strictLineBreaks": true,
+  "foldHeading": true,
+  "showLineNumber": false,
+  "vimMode": false
+}

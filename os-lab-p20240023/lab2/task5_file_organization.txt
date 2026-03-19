@@ -1,0 +1,4 @@
+=== Task 5: File Organization ===
+--- Moved server_notice.txt to devops/ ---
+handbook.txt
+server_notice.txt
