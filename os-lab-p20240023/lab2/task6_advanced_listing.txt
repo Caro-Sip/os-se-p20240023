@@ -1,0 +1,248 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+docker-compose.yml
+Dockerfile
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+styles.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo_brief.txt
+logo.png
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+total 4
+-rw-rw-r-- 1 syphon syphon 26 Mar 17 14:47 frontend_config.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:47 index.html
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:47 styles.css
+total 8
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:52 pipeline_backup.txt
+-rw-rw-r-- 1 syphon syphon 29 Mar 17 14:51 server_config.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 app.js
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 database.sql
+total 12
+-rw-rw-r-- 1 syphon syphon 48 Mar 17 17:03 server_notice.txt
+-rw-rw-r-- 1 syphon syphon 34 Mar 23 22:44 security_audit.txt
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:51 pipeline.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 docker-compose.yml
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 Dockerfile
+
+--- Sort by Time: techcorp/ (ls -lt) ---
+total 8
+-rw-rw-r-- 1 syphon syphon 32 Mar 17 14:45 remote_work.txt
+-rw-rw-r-- 1 syphon syphon 39 Mar 17 14:45 leave_policy.txt
+total 12
+-rw-rw-r-- 1 syphon syphon 39 Mar 23 22:38 leave_policy.txt
+-rw-rw-r-- 1 syphon syphon 23 Mar 17 17:03 handbook.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:46 checklist.txt
+-rw-rw-r-- 1 syphon syphon 52 Mar 17 14:46 welcome_guide.txt
+total 8
+-rw-rw-r-- 1 syphon syphon 32 Mar 17 14:51 q1_2026_launch.txt
+-rw-rw-r-- 1 syphon syphon 35 Mar 17 14:51 social_media.txt
+
+--- Human-Readable (ls -lh) ---
+total 4.0K
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 banner.jpg
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 brochure.pdf
+-rw-rw-r-- 1 syphon syphon 22 Mar 17 17:03 logo_brief.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 logo.png
+total 12K
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 docker-compose.yml
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 Dockerfile
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:51 pipeline.txt
+-rw-rw-r-- 1 syphon syphon 34 Mar 23 22:44 security_audit.txt
+-rw-rw-r-- 1 syphon syphon 48 Mar 17 17:03 server_notice.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 database.sql
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 app.js
+-rw-rw-r-- 1 syphon syphon 29 Mar 17 14:51 server_config.txt
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:52 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-rw-r-- 1 syphon syphon 52 Mar 17 14:46 welcome_guide.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:46 checklist.txt
+-rw-rw-r-- 1 syphon syphon 23 Mar 17 17:03 handbook.txt
+-rw-rw-r-- 1 syphon syphon 39 Mar 23 22:38 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxrwxr-x 5 syphon syphon 4.0K Mar 17 14:43 engineering
+drwxrwxr-x 4 syphon syphon 4.0K Mar 17 14:43 hr
+drwxrwxr-x 4 syphon syphon 4.0K Mar 17 17:04 marketing
+
+techcorp/engineering:
+total 12K
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:52 backend
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:51 devops
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:58 frontend
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:52 pipeline_backup.txt
+-rw-rw-r-- 1 syphon syphon 29 Mar 17 14:51 server_config.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 app.js
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 database.sql
+
+techcorp/engineering/devops:
+total 12K
+-rw-rw-r-- 1 syphon syphon 48 Mar 17 17:03 server_notice.txt
+-rw-rw-r-- 1 syphon syphon 34 Mar 23 22:44 security_audit.txt
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:51 pipeline.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 docker-compose.yml
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 Dockerfile
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-rw-r-- 1 syphon syphon 26 Mar 17 14:47 frontend_config.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:47 index.html
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:47 styles.css
+
+techcorp/hr:
+total 8.0K
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:38 onboarding
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:44 policies
+
+techcorp/hr/onboarding:
+total 12K
+-rw-rw-r-- 1 syphon syphon 52 Mar 17 14:46 welcome_guide.txt
+-rw-rw-r-- 1 syphon syphon 39 Mar 23 22:38 leave_policy.txt
+-rw-rw-r-- 1 syphon syphon 23 Mar 17 17:03 handbook.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:46 checklist.txt
+
+techcorp/hr/policies:
+total 8.0K
+-rw-rw-r-- 1 syphon syphon 39 Mar 17 14:45 leave_policy.txt
+-rw-rw-r-- 1 syphon syphon 32 Mar 17 14:45 remote_work.txt
+
+techcorp/marketing:
+total 8.0K
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:33 assets
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:56 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 syphon syphon 22 Mar 17 17:03 logo_brief.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 banner.jpg
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 brochure.pdf
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 syphon syphon 35 Mar 17 14:51 social_media.txt
+-rw-rw-r-- 1 syphon syphon 32 Mar 17 14:51 q1_2026_launch.txt
+
+--- Challenge Investigation ---
+total 12
+-rw-rw-r-- 1 syphon syphon 39 Mar 23 22:38 leave_policy.txt
+techcorp/marketing/:
+total 8.0K
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:33 assets
+drwxrwxr-x 2 syphon syphon 4.0K Mar 23 22:56 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 banner.jpg
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 brochure.pdf
+-rw-rw-r-- 1 syphon syphon 22 Mar 17 17:03 logo_brief.txt
+-rw-rw-r-- 1 syphon syphon  0 Mar 17 14:51 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 syphon syphon 32 Mar 17 14:51 q1_2026_launch.txt
+-rw-rw-r-- 1 syphon syphon 35 Mar 17 14:51 social_media.txt
+total 12
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 Dockerfile
+-rw-rw-r-- 1 syphon syphon  0 Mar 23 22:51 docker-compose.yml
+-rw-rw-r-- 1 syphon syphon 29 Mar 23 22:51 pipeline.txt
+-rw-rw-r-- 1 syphon syphon 34 Mar 23 22:44 security_audit.txt
+-rw-rw-r-- 1 syphon syphon 48 Mar 17 17:03 server_notice.txt
+total 180K
+-rw-------  1 syphon syphon  31K Mar 23 23:01 .bash_history
+drwxr-x--- 30 syphon syphon 4.0K Mar 23 22:34 .
+drwxr-xr-x  3 root   root   4.0K Mar 10 23:59 ..
+drwx------ 24 syphon syphon 4.0K Mar 20 00:43 .cache
+drwx------ 22 syphon syphon 4.0K Mar 22 16:15 .config
+drwx------  3 syphon syphon 4.0K Mar 12 18:51 .copilot
+drwxrwxr-x  7 syphon syphon 4.0K Mar 20 18:23 dclab_ws
+drwxr-xr-x  2 syphon syphon 4.0K Mar 19 15:36 Desktop
+drwxr-xr-x  4 syphon syphon 4.0K Mar 19 10:31 Documents
+drwxrwxr-x  3 syphon syphon 4.0K Mar 12 18:51 .dotnet
+drwxr-xr-x  5 syphon syphon 4.0K Mar 22 21:07 Downloads
+drwxr--r--  5 syphon syphon 4.0K Mar 19 18:50 .gazebo
+drwx------  2 syphon syphon 4.0K Mar 23 10:44 .gnupg
+drwxr--r--  2 syphon syphon 4.0K Mar 19 18:37 .ignition
+drwxrwxr-x  6 syphon syphon 4.0K Mar 23 22:35 ITC-OS-2026
+drwx------  3 syphon syphon 4.0K Mar 11 07:03 .local
+drwx------  3 syphon syphon 4.0K Mar 13 16:47 .mozilla
+drwxr-xr-x  2 syphon syphon 4.0K Mar 11 07:03 Music
+drwxrwxr-x  6 syphon syphon 4.0K Mar 22 20:56 OOP-4-Java
+drwxr-xr-x  6 syphon syphon 4.0K Mar 23 22:30 os-se-p20240023
+drwxr-xr-x  3 syphon syphon 4.0K Mar 12 19:47 Pictures
+drwx------  3 syphon syphon 4.0K Mar 12 18:11 .pki
+drwxr-xr-x  2 syphon syphon 4.0K Mar 11 07:03 Public
+drwxrwxr-x  3 syphon syphon 4.0K Mar 12 18:05 .ros
+drwxrwxr-x  2 syphon syphon 4.0K Mar 19 18:37 .sdformat
+drwx------  6 syphon syphon 4.0K Mar 12 18:11 snap
+drwx------  2 syphon syphon 4.0K Mar 19 10:54 .ssh
+drwxr-xr-x  2 syphon syphon 4.0K Mar 11 07:03 Templates
+drwx------  6 syphon syphon 4.0K Mar 13 16:47 .thunderbird
+drwxr-xr-x  2 syphon syphon 4.0K Mar 11 07:03 Videos
+drwxrwxr-x  4 syphon syphon 4.0K Mar 12 18:49 .vscode
+-rw-r--r--  1 syphon syphon 3.7K Mar 10 23:59 .bashrc
+-rw-r--r--  1 syphon syphon  807 Mar 10 23:59 .profile
+-rw-r--r--  1 syphon syphon  361 Mar 19 15:34 .pam_environment
+-rw-r--r--  1 syphon syphon  220 Mar 10 23:59 .bash_logout
+-rw-rw-r--  1 syphon syphon   89 Mar 20 17:52 rossetup.bash
+-rw-rw-r--  1 syphon syphon   77 Mar 15 14:52 .gitconfig
+-rw-rw-r--  1 syphon syphon    0 Mar 23 22:34 os-se-
+-rw-r--r--  1 syphon syphon    0 Mar 11 00:20 .sudo_as_admin_successful
