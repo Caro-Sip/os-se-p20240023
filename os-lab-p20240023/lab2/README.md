@@ -100,3 +100,4 @@ history | tail -n 50
 
 <!-- Insert your screenshot below: -->
 ![alt text](images/full_history.png)
+
