@@ -99,15 +99,15 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What struct does `readdir()` return? What fields does it contain?**
 
-   > [Your answer]
+   > return a pointer to struct dir entry which contains: d_ino, d_off, d_reclen, d_type, d_name\[\]
 
 2. **What information does `stat()` provide beyond file size?**
 
-   > [Your answer]
+   > return struct stat with data: permission, inode number, device id, hard link count, owner UID and GID, file size in bytes, block size and count, access time modifier, change time
 
 3. **Why can't you `write()` a number directly — why do you need `snprintf()` first?**
 
-   > [Your answer]
+   > write operates on raw bytes that's why we need snprintf to convert numbers to its string representation
 
 ---
 

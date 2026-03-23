@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 int main() {
+    char buffer[512];
     DIR *dir = opendir(".");
     if (dir == NULL) {
         const char *errorMsg = "Error opening directory";
@@ -14,6 +15,17 @@ int main() {
 
     struct dirent *entry;
     struct stat fileStat;
-    char buffer[256];
-    snprintf(buffer, sizeof(buffer), "%-30s %10ld\n", "Filename", "Size (bytes)");
+    int len = snprintf(buffer, sizeof(buffer), "%-30s %10s\n", "Filename", "Size (bytes)");
+    write(1, buffer,len);
+
+    len = snprintf(buffer, sizeof(buffer), "%-30s %10s\n", "------------------------------", "----------");
+    write(1, buffer, len);
+    // or strlen of the buffer varia
+
+    while ((entry = readdir(dir)) != NULL) {
+        if (stat(entry->d_name, &fileStat) == 0) {
+            int len = snprintf(buffer, sizeof(buffer), "%-30s %10ld\n", entry->d_name, fileStat.st_size);
+            write(1, buffer, len);
+        }
+    }
 }
