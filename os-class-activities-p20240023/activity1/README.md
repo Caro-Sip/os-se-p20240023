@@ -10,7 +10,7 @@
 
 Screenshot of running `hello_syscall.c` on Linux:
 
-![hello syscall](hello_syscall.png)
+![hello syscall](screenshots/hello_syscall.png)
 
 Screenshot of running `hello_winapi.c` on Windows (CMD/PowerShell/VS Code):
 
@@ -32,7 +32,7 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 <!-- Screenshot: gcc -o file_creator_lib file_creator_lib.c && ./file_creator_lib && cat output.txt -->
 
-![Task 1A - Library](task1_creator_lib.png)
+![Task 1A - Library](screenshots/task1_creator_lib.png)
 
 **Version B — POSIX System Calls (`file_creator_sys.c`):**
 

@@ -15,7 +15,7 @@ I use WSL to virtualize linux jammy jellyfish 22.04.5 LTS
 
 <!-- Insert your screenshot for Task 1 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal after running uname -a and lsb_release -a, or the contents of your task1_os_info.txt file. -->
-![task1](Assets/task1.png)
+![task1](task1.png)
 
 ---
 
@@ -25,7 +25,7 @@ I create, read, update, and delete linux shell commands on file a and b and outp
 
 <!-- Insert your screenshot for Task 2 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal running the file manipulation commands (mkdir, touch, cp, mv, rm) or the final cat of your task2_file_commands.txt file. -->
-![task2](Assets/task2.png)
+![task2](task2.png)
 
 ---
 
@@ -35,7 +35,7 @@ remove saves the configuration while purge remove all instances including the co
 
 <!-- Insert your screenshot for Task 3 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the output of ls -ld /etc/mc after running apt-get remove (folder still exists) versus after running apt-get purge (folder is gone). -->
-![task3](Assets/task3.png)
+![task3](task3.png)
 
 ---
 
@@ -45,7 +45,7 @@ I ran the process, in this case sleep with 120 seconds as arg, in the background
 
 <!-- Insert your screenshot for Task 4 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal where you ran sleep 120 & and the subsequent ps output showing the sleep process running. -->
-![task4](Assets/task4.png)
+![task4](task4.png)
 
 ---
 
@@ -55,7 +55,7 @@ I ran 3 background processes simulating multitasking and read the processes with
 
 <!-- Insert your screenshot for Task 5 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal ps output capturing the multiple background tasks (sleep and python3 server) running at the same time. -->
-![task5](Assets/task5.png)
+![task5](task5.png)
 
 ---
 
@@ -65,4 +65,4 @@ My system is running on a virtualization of the Linux through WSL with the hyper
 
 <!-- Insert your screenshot for Task 6 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal output of the systemd-detect-virt and lscpu commands. -->
-![task6](Assets/task6.png)
+![task6](task6.png)
