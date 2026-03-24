@@ -167,19 +167,21 @@ Screenshot of running on Windows:
 
 1. **How many system calls does the library version make compared to the system call version?**
 
-   > [Your answer — use the `strace -c` counts]
+   > The library uses 42 system calls and the system use 37 system calls, 5 calls difference
 
 2. **What extra system calls appear in the library version? What do they do?**
 
-   > [Your answer — mention `brk`, `mmap`, `fstat`, etc.]
+   > - `brk` to extend the heap for dynamic memory 
+   > - `newfstatat` file status information
+   > - `getrandom` gets random bytes from kernel enthropy pool, a collection of OS randomness
 
 3. **How many `write()` calls does `fprintf()` actually produce?**
 
-   > [Your answer]
+   > 2 write calls
 
 4. **In your own words, what is the real difference between a library function and a system call?**
 
-   > [Your answer]
+   > the library does everything in user space and has a wrapper around system calls while system call is attempting to communicate directly with the kernel
 
 ---
 
