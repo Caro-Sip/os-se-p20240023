@@ -121,15 +121,15 @@ Screenshot of running on Windows:
 
 1. **Why does Windows use `HANDLE` instead of integer file descriptors?**
 
-   > [Your answer]
+   > because kernel resources are managed as objects through per process handle table
 
 2. **What is the Windows equivalent of POSIX `fork()`? Why is it different?**
 
-   > [Your answer]
+   > linux create processes via fork() from the parent terminal while Windows use CreateProcess() from scratch which is slower
 
 3. **Can you use POSIX calls on Windows?**
 
-   > [Your answer]
+   > Not natively
 
 ---
 
