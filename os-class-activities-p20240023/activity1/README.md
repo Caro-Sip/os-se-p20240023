@@ -2,7 +2,7 @@
 
 - **Student Name:** Suon Caro
 - **Student ID:** p20240023
-- **Date:** [Date of Submission]
+- **Date:** 30 March 2026
 
 ---
 
@@ -135,7 +135,7 @@ Screenshot of running on Windows:
 
 ## Task 3: strace Analysis
 
-**Describe what you observed:** [What surprised you about the strace output? How many more system calls did the library version make?]
+**Describe what you observed:** The most noticeable difference between library functions and POSIX system call is the amount of system calls to the kernel made. As shown via the image below, the library use 5 extra system calls and in one instant, the fprintf function call 2 system calls instead of 1.
 
 ### strace Output — Library Version (File Creator)
 
@@ -215,23 +215,30 @@ Screenshot of running on Windows:
 
 1. **What is `/proc`? Is it a real filesystem on disk?**
 
-   > [Your answer]
+   > it is a pseudo file system that do not exist on the disk but linux automatically fills in the data when used cat on the info. This is the a technique used by linux to look  into the system through the kernel
 
 2. **Monolithic kernel vs. microkernel — which type does Linux use?**
 
-   > [Your answer]
+   > Monolithic kernel. Everything runs on the kernel space as one binary
 
 3. **What memory regions do you see in `/proc/self/maps`?**
 
-   > [Your answer]
+   > code segment, data segment, BSS segment, heap, memory mapped segment, and the stack
 
 4. **Break down the kernel version string from `uname -a`.**
 
-   > [Your answer]
+   > - `Linux` : kernel name
+   > - `mago` : computer name
+   > - `6.8.0` : kernel version
+   > - `1009-generic` : build number
+   > - `buildd@lgw04-amd` : Built by (Canonical's build server)
+   > - `gcc (Ubuntu 12.3.0...)` : Compiler used to build the kernel
+   > - `#12` : build attempt number
+   > - `Ubuntu 12.3.0 (Ubuntu 12.3.0-1ubuntu1:22.04.1)` : version of ubuntu tag
 
 5. **How does `/proc` show that the OS is an intermediary between programs and hardware?**
 
-   > [Your answer]
+   > `/proc` is a direct window to the hardware of the system by using kernel abstraction. The reason for this is the monolithic kernel model that all programs must go through the kernel to communicate with the system hardware via system calls.
 
 ---
 
@@ -239,4 +246,8 @@ Screenshot of running on Windows:
 
 What did you learn from this activity? What was the most surprising difference between library functions and system calls?
 
-> [Write your reflection here]
+> This system taught me that windows and linux uses two different library for system calls, windows.h and unistd.h.(POSIX)
+> 
+> It also taught me that the library we normally use are more convenient but at the cost of more system calls.
+> 
+> I also learnt about my system information via exposing hardware and resource detail through the `/proc` pseudo file system
