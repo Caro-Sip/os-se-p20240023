@@ -25,7 +25,7 @@ I create, read, update, and delete linux shell commands on file a and b and outp
 
 <!-- Insert your screenshot for Task 2 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal running the file manipulation commands (mkdir, touch, cp, mv, rm) or the final cat of your task2_file_commands.txt file. -->
-![task2](task2.png)
+![task2](os-lab-p20240023/lab1/images/task2.png)
 
 ---
 
@@ -45,7 +45,7 @@ I ran the process, in this case sleep with 120 seconds as arg, in the background
 
 <!-- Insert your screenshot for Task 4 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal where you ran sleep 120 & and the subsequent ps output showing the sleep process running. -->
-![task4](task4.png)
+![task4](os-lab-p20240023/lab1/images/task4.png)
 
 ---
 
