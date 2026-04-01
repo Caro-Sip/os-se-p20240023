@@ -1,0 +1,101 @@
+=== Full Command History ===
+int tc_get_cpu_count(void);
+
+// NEW — Returns total memory in MB
+long tc_get_memory_mb(void);
+
+#endif
+EOF
+
+ 1979  cat > sysinfo_test_v2.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report v2 ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+EOF
+
+ 1980  echo "" >> ../task5_shared_library.txt
+ 1981  echo "--- Phase 4: Partner A wrote v2 test ---" >> ../task5_shared_library.txt
+ 1982  cat sysinfo_test_v2.c >> ../task5_shared_library.txt
+ 1983  gedit 
+ 1984  gedit techcorp_sysinfo.
+ 1985  gedit techcorp_sysinfo.h
+ 1986  mv /home/syphon/Downloads/Telegram Desktop/libtechcorp_sysinfo.so .
+ 1987  mv /home/syphon/Downloads/Telegram\ Desktop/libtechcorp_sysinfo.so .
+ 1988  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+ 1989  echo "" >> ../task5_shared_library.txt
+ 1990  echo "--- Phase 4: v2 test run ---" >> ../task5_shared_library.txt
+ 1991  LD_LIBRARY_PATH=. ./sysinfo_test_v2 >> ../task5_shared_library.txt
+ 1992  cat ../task5_shared_library.txt 
+ 1993  sudo cp libtechcorp_sysinfo.so /usr/local/lib/
+ 1994  sudo ldconfig
+ 1995  echo "" >> ../task5_shared_library.txt 
+ 1996  echo "--- System-wide install: ldconfig cache ---" >> ../task5_shared_library.txt
+ 1997  ldconfig -p | grep techcorp >> ../task5_shared_library.txt
+ 1998  # Re-test WITHOUT LD_LIBRARY_PATH
+ 1999  echo "" >> ../task5_shared_library.txt
+ 2000  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+ 2001  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+ 2002  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+ 2003  cat ../task5_shared_library.txt 
+ 2004  cat techcorp_sysinfo..h
+ 2005  cat techcorp_sysinfo.h
+ 2006  echo "" >> ../task5_shared_library.txt
+ 2007  echo "--- Pair Information ---" >> ../task5_shared_library.txt
+ 2008  echo "Role A (Library Author → v2 Tester): Suon Caro - p20240023" >> ../task5_shared_library.txt
+ 2009  echo "Role B (Test Author → v2 Library Extender): Rith Chankolboth - p20240038" >> ../task5_shared_library.txt
+ 2010  cd ..
+ 2011  cd shared_lib_lab/
+ 2012  cat > techcorp_sysinfo.h << 'EOF'
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+// Returns the hostname of the machine
+const char* tc_get_hostname(void);
+
+// Returns the current uptime in a human-readable string
+const char* tc_get_uptime(void);
+
+// Returns the number of CPU cores
+int tc_get_cpu_count(void);
+
+#endif
+EOF
+
+ 2013  cat techcorp_sysinfo.h
+ 2014  cd ..
+ 2015  cat > techcorp_sysinfo.h << 'EOF'
+   #ifndef TECHCORP_SYSINFO_H
+   #define TECHCORP_SYSINFO_H
+
+   const char* tc_get_hostname(void);
+   const char* tc_get_uptime(void);
+   int tc_get_cpu_count(void);
+
+   // NEW — Returns total memory in MB
+   long tc_get_memory_mb(void);
+
+   #endif
+EOF
+
+ 2016  cat techcorp_sysinfo.h 
+ 2017  mv techcorp_sysinfo.h shared_lib_lab/
+ 2018  nano shared_lib_lab/techcorp_sysinfo.h
+ 2019  cat task5
+ 2020  cat task5_shared_library.txt 
+ 2021  ldconfig -p | grep techcorp
+ 2022  ldd ./sysinfo_test_v2
+ 2023  cd shared_lib_lab/
+ 2024  ldd ./sysinfo_test_v2
+ 2025  cd ..
+ 2026  mv /home/syphon/Downloads/Telegram Desktop/image_2026-04-01_17-00-42.png images/task5_pair_integration.png
+ 2027  mv /home/syphon/Downloads/Telegram\ Desktop/image_2026-04-01_17-00-42.png images/task5_pair_integration.png
+ 2028  echo "=== Full Command History ===" > task_history.txt

@@ -1,0 +1,16 @@
+=== Task 1: I/O Redirection ===
+--- stdout to file (overwrite) ---
+acpi
+adduser.conf
+alsa
+alternatives
+anacrontab
+apache2
+apg.conf
+apm
+apparmor
+apparmor.d
+--- stdout append ---
+First line
+Second line
+Third line

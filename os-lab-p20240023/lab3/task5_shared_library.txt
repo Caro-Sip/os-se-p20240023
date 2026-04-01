@@ -1,0 +1,60 @@
+=== Task5: Build and Register a Shared Library ===
+--- API Design (header file) ---
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+// Returns the hostname of the machine
+const char* tc_get_hostname(void);
+
+// Returns the current uptime in a human-readable string
+const char* tc_get_uptime(void);
+
+// Returns the number of CPU cores
+int tc_get_cpu_count(void);
+
+#endif
+
+--- Partner A: Compiled shared library ---
+libtechcorp_sysinfo.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=7ac0a65dbacb2f829203e51052b8235c5868f642, not stripped
+-rwxrwxr-x 1 syphon syphon 16072 Mar 31 16:10 libtechcorp_sysinfo.so
+
+--- Phase 4: Partner A wrote v2 test ---
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report v2 ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+
+--- Phase 4: v2 test run ---
+=== TechCorp System Info Report v2 ===
+Hostname : mago
+Uptime   : 0 hours, 9 minutes
+CPU Cores: 32
+Memory   : 15604 MB
+======================================
+
+--- System-wide install: ldconfig cache ---
+	libtechcorp_sysinfo.so (libc6,x86-64) => /usr/local/lib/libtechcorp_sysinfo.so
+
+--- System-wide test (no LD_LIBRARY_PATH) ---
+	linux-vdso.so.1 (0x00007ffe887ac000)
+	libtechcorp_sysinfo.so => /usr/local/lib/libtechcorp_sysinfo.so (0x00007cf5b080b000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007cf5b0400000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007cf5b083f000)
+=== TechCorp System Info Report v2 ===
+Hostname : mago
+Uptime   : 0 hours, 12 minutes
+CPU Cores: 32
+Memory   : 15604 MB
+======================================
+
+--- Pair Information ---
+Role A (Library Author → v2 Tester): Suon Caro - p20240023
+Role B (Test Author → v2 Library Extender): Rith Chankolboth - p20240038
