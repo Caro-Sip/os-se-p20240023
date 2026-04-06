@@ -15,7 +15,7 @@ I use WSL to virtualize linux jammy jellyfish 22.04.5 LTS
 
 <!-- Insert your screenshot for Task 1 below: -->
 <!-- SCREENSHOT REQUIREMENT: Show the terminal after running uname -a and lsb_release -a, or the contents of your task1_os_info.txt file. -->
-![task1](task1.png)
+![task1](os-lab-p20240023/lab1/images/task1.png)
 
 ---
 
