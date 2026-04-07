@@ -39,23 +39,24 @@ Parent: done.
 
 1. **What does `fork()` return to the parent? What does it return to the child?**
 
-   > [Your answer]
+   > `fork()` returns the child's PID to the parent process and returns 0 to the child process.
 
 2. **What happens if you remove the `waitpid()` call? Why might the output look different?**
 
-   > [Your answer]
+   > The parent would exit without ever waiting for the child process to finish. The child would continue running in the background becoming an orphan. The output could be out of order
 
 3. **What does `execlp()` do? Why don't we see "execlp failed" when it succeeds?**
 
-   > [Your answer]
+   > it replaces the current process image with a new program. 
 
 4. **Draw the process tree for your program (parent → child). Include PIDs from your output.**
 
-   > [Your answer / diagram]
+   > PID 8403 (parent: forkchild) 
+   > |- PID 8404 (child: ls)
 
 5. **Which command did you use to view the process tree (`ps --forest`, `pstree`, or `htop`)? What information does each column show?**
 
-   > [Your answer]
+   > ps --forest: uid, pid, ppid, cpu, mem, tty, stat, start, time, command
 
 ---
 
@@ -83,23 +84,25 @@ Screenshot showing PID and Parent PID in the **Details** tab:
 
 1. **What is the key difference between how Linux creates a process (`fork` + `exec`) and how Windows does it (`CreateProcess`)?**
 
-   > [Your answer]
+   > linux dupes and replaces
+   > windows create directly
 
 2. **What does `WaitForSingleObject()` do? What is its Linux equivalent?**
 
-   > [Your answer]
+   > forcing the parent to wait till the child ends; it is equivalent to waitpid or wait
 
 3. **Why do we need to call `CloseHandle()` at the end? What happens if we don't?**
 
-   > [Your answer]
+   > for releasing resources
 
 4. **In Task Manager, what was the PID of your parent program and the PID of mspaint? Do they match your program's output?**
 
-   > [Your answer]
+   > winprocess PID 12592 ; mspaint 21008
+   > yes they do.
 
 5. **Compare the Processes tab (tree view) and the Details tab (PID/PPID columns). Which view makes it easier to understand the parent-child relationship? Why?**
 
-   > [Your answer]
+   > tree is a hierarchical model explicitly defining the parent child relationship
 
 ---
 
@@ -123,23 +126,23 @@ Consumer: shared memory unlinked.
 
 1. **What does `shm_open()` do? How is it different from `open()`?**
 
-   > [Your answer]
+   > it creates or opens a named shared memory in /dev/shm. It is a memory based IPC between unrelated process
 
 2. **What does `mmap()` do? Why is shared memory faster than other IPC methods?**
 
-   > [Your answer]
+   > it maps shared memory into the process' virutual address space. it is faster because it doesn't copy. it is accessing the same memory address
 
 3. **Why must the shared memory name match between producer and consumer?**
 
-   > [Your answer]
+   > the name is the header that allows for discovery
 
 4. **What does `shm_unlink()` do? What would happen if the consumer didn't call it?**
 
-   > [Your answer]
+   > removes the sahred memory object from the system. without it, it will live to waste resources
 
 5. **If the consumer runs before the producer, what happens? Try it and describe the error.**
 
-   > [Your answer]
+   > it will fail because shm_open() has read only permission and since it had not been opened yet, it won't work.
 
 ---
 
@@ -163,23 +166,23 @@ Receiver: queue unlinked.
 
 1. **How is a message queue different from shared memory? When would you use one over the other?**
 
-   > [Your answer]
+   > shared memory is direct communication but needs the user to be competent but message queue is asynchronous.
 
 2. **Why does the queue name in `common.h` need to start with `/`?**
 
-   > [Your answer]
+   > it is a POSIX standard and the / allows for portability across system
 
 3. **What does `mq_unlink()` do? What happens if neither the sender nor receiver calls it?**
 
-   > [Your answer]
+   > it removes the queue, without it, similar to shm unlink, it will persist wasting resources
 
 4. **What happens if you run the receiver before the sender?**
 
-   > [Your answer]
+   > it will hang until it receives
 
 5. **Can multiple senders send to the same queue? Can multiple receivers read from the same queue?**
 
-   > [Your answer]
+   > yes and yes but only they would compete for messages.
 
 ---
 
@@ -187,4 +190,4 @@ Receiver: queue unlinked.
 
 What did you learn from this activity? What was the most interesting difference between Linux and Windows process creation? Which IPC method do you prefer and why?
 
-> [Write your reflection here]
+> i learnt about zombie processes and how process have a parent child relationship. I also learnt how processes can communicate with each other through shared memory or queueing
