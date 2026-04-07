@@ -29,7 +29,7 @@ int main() {
      * "Open file location" to find the correct path.
      */
     if (!CreateProcess(
-            "C:\\Windows\\System32\\mspaint.exe",  /* Application path */
+            "C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2601.401.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe",  /* Application path */
             NULL,           /* Command line */
             NULL,           /* Process security attributes */
             NULL,           /* Thread security attributes */
