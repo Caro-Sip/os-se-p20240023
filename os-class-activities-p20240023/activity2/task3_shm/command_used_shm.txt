@@ -1,0 +1,20 @@
+ 1964  ls
+ 1965  nano producer.c
+ 1966  rm producer*
+ 1967  nano shm-producer.c
+ 1968  rm shm-producer
+ 1969  rm shm-producer.c 
+ 1970  nano shm-producer.c
+ 1971  nano shm-consumer.c
+ 1972  ls
+ 1973  gcc -o shm-consumer shm-consumer.c 
+ 1974  gcc -o shm-producer shm-producer.c 
+ 1975  ./shm-producer 
+ 1976  ./shm-consumer > result-shm-ipc.txt
+ 1977  nano shm-consumer
+ 1978  nano shm-consumer.c 
+ 1979  gcc -o shm-producer shm-producer.c 
+ 1980  gcc -o shm-consumer shm-consumer.c 
+ 1981  ./shm-consumer > result-shm-ipc.txt
+ 1982  cat result-shm-ipc.txt 
+ 1983  history | tail -n 20 > command_used_shm.txt

@@ -1,0 +1,10 @@
+total 32
+drwxrwxr-x 2 syphon syphon  4096 Apr  7 15:57 .
+drwxrwxr-x 7 syphon syphon  4096 Apr  7 15:52 ..
+-rwxrwxr-x 1 syphon syphon 16400 Apr  7 15:57 forkchild
+-rw-rw-r-- 1 syphon syphon  1431 Apr  7 15:55 forkchild.c
+-rw-rw-r-- 1 syphon syphon     0 Apr  7 15:59 result_forkchild.txt
+Parent process (PID: 8403) — creating child...
+Parent: waiting for child (PID: 8404) to finish...
+Parent: child exited with status 0
+Parent: done.

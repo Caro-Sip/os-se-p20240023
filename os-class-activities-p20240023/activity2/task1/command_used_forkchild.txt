@@ -1,0 +1,20 @@
+ 1936  nmcli help
+ 1937  BAA
+ 1938  c
+ 1939  nmgui
+ 1940  cd os-se-p20240023/os-class-activities-p20240023/
+ 1941  ls
+ 1942  sudo systemctl status
+ 1943  clear
+ 1944  cd os-se-p20240023/
+ 1945  mkdir -p os-class-activities-p20240023/activity2/{task1,task2,task3_shm,task4_mq,screenshots}
+ 1946  cd os-class-activities-p20240023/activity2/
+ 1947  cd task1/
+ 1948  cd ~
+ 1949  ls
+ 1950  cd os-class-activities-p20240023/activity2/
+ 1951  cd os-se-p20240023/os-class-activities-p20240023/activity2/task1/
+ 1952  nano forkchild.c
+ 1953  gcc -o forkchild forkchild.c 
+ 1954  ./forkchild > result_forkchild.txt 2>&1
+ 1955  history | tail -n 20 > command_used_forkchild.txt

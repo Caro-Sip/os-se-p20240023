@@ -1,0 +1,20 @@
+ 1976  ./shm-consumer > result-shm-ipc.txt
+ 1977  nano shm-consumer
+ 1978  nano shm-consumer.c 
+ 1979  gcc -o shm-producer shm-producer.c 
+ 1980  gcc -o shm-consumer shm-consumer.c 
+ 1981  ./shm-consumer > result-shm-ipc.txt
+ 1982  cat result-shm-ipc.txt 
+ 1983  history | tail -n 20 > command_used_shm.txt
+ 1984  cd ../task4_mq/
+ 1985  nano common.h
+ 1986  nano sender.c
+ 1987  nano receiver.c
+ 1988  nano common.h
+ 1989  nano receiver.c
+ 1990  gcc -o sender sender.c -lrt
+ 1991  gcc -o receiver receiver.c -lrt
+ 1992  ./sender 
+ 1993  ./receiver  > result-mq-ipc.txt
+ 1994  cat result-mq-ipc.txt
+ 1995  history | tail -n 20 > command_used_mq.txt
