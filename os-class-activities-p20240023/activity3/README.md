@@ -1,1 +1,1 @@
-![[os-class-activities-p20240023/activity3/task1.png]]
+![[os-class-activities-p20240023/activity3/screenshots/task1.png]]

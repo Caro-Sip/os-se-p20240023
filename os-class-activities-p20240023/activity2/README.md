@@ -23,7 +23,16 @@ Screenshot of the parent-child process tree (using `ps --forest`, `pstree`, or `
 ### Output
 
 ```
-[Paste the content of result_forkchild.txt here]
+total 32
+drwxrwxr-x 2 syphon syphon  4096 Apr  7 15:57 .
+drwxrwxr-x 7 syphon syphon  4096 Apr  7 15:52 ..
+-rwxrwxr-x 1 syphon syphon 16400 Apr  7 15:57 forkchild
+-rw-rw-r-- 1 syphon syphon  1431 Apr  7 15:55 forkchild.c
+-rw-rw-r-- 1 syphon syphon     0 Apr  7 15:59 result_forkchild.txt
+Parent process (PID: 8403) — creating child...
+Parent: waiting for child (PID: 8404) to finish...
+Parent: child exited with status 0
+Parent: done.
 ```
 
 ### Questions
@@ -61,6 +70,8 @@ Screenshot of compiling and running `winprocess.c`:
 ### Task Manager Screenshots
 
 Screenshot showing process tree in the **Processes** tab (mspaint nested under your program):
+
+Note to teacher: i couldn't get taskmanager to show tree so i had to display via powershell instead.
 
 ![Task 2 - Task Manager Tree](screenshots/task2_taskmanager_tree.png)
 
@@ -103,7 +114,9 @@ Screenshot of compiling and running `shm-producer` and `shm-consumer`:
 ### Output
 
 ```
-[Paste the content of result-shm-ipc.txt here]
+Consumer: reading from shared memory 'OS-caro'
+Consumer: message = "Hello, this is shared memory IPC!"
+Consumer: shared memory unlinked.
 ```
 
 ### Questions
@@ -141,7 +154,9 @@ Screenshot of compiling and running `sender` and `receiver`:
 ### Output
 
 ```
-[Paste the content of result-mq-ipc.txt here]
+Receiver: message received from queue '/queue-caro'
+Receiver: message = "Hello from sender! This is message queue IPC."
+Receiver: queue unlinked.
 ```
 
 ### Questions
