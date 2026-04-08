@@ -1,0 +1,18 @@
+=== Task 5: Orphan & Zombie Processes ===
+--- Orphan process observation ---
+Child PID: 17441, Original PPID: 17440, New PPID after parent exit: 2132
+--- Zombie process observation ---
+Zombie PID: 17628, State: Z (zombie/defunct), Parent PID: 17627
+--- Zombie and Orphan Cleanup Notes ---
+Q: How are orphans cleaned up? A: by adopted by another process
+Q: How are zombies cleaned up? A: by killing parent
+Q: Can you kill a zombie with 'kill -9'? Why or why not? A: zombie doesnt eat any resources so they can receive signals
+--- Challenge Orphan & Zombie ---
+syphon@mago:~$ ps aux | grep -E 'Z|defunct'
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+syphon     18268  0.0  0.0      0     0 pts/1    Z+   02:38   0:00 [zombie] <defunct>
+syphon     18270  0.0  0.0   9260  2712 pts/2    S+   02:38   0:00 grep --color=auto -E Z|defunct
+syphon@mago:~$ ps aux | grep -E 'Z|defunct'
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+syphon     18272  0.0  0.0   9260  2712 pts/2    S+   02:38   0:00 grep --color=auto -E Z|defunct
+syphon@mago:~$ ps -forest

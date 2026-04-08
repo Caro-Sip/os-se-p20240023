@@ -22,16 +22,11 @@ gdm:x:128:134:Gnome Display Manager:/var/lib/gdm3:/bin/false
 syphon:x:1000:1000:syphon,,,:/home/syphon:/bin/bash
 nvidia-persistenced:x:129:137:NVIDIA Persistence Daemon,,,:/nonexistent:/usr/sbin/nologin
 --- Top 5 largest directories under /usr ---
-8.3G	/usr/lib
-2.3G	/usr/share
+8.6G	/usr/lib
+2.4G	/usr/share
 401M	/usr/include
 342M	/usr/src
-310M	/usr/bin
-8.3G	/usr/lib
-2.3G	/usr/share
-401M	/usr/include
-342M	/usr/src
-310M	/usr/bin
+315M	/usr/bin
 --- Pipeline with tee ---
 20
 (also saved to etc_snapshot.txt)
@@ -40,3 +35,10 @@ hello world from techcorp
 --- Remove duplicate spaces ---
 too many spaces here
 --- Challenge Pipelines ---
+146
+usbmux
+uucp
+uuidd
+whoopsie
+www-data
+479

@@ -1,0 +1,242 @@
+=== Task 4: Process Management ===
+--- Current processes (your user) ---
+    PID TTY          TIME CMD
+   2132 ?        00:00:00 systemd
+   2133 ?        00:00:00 (sd-pam)
+   2140 ?        00:00:00 pipewire
+   2141 ?        00:00:00 pipewire-media-
+   2142 ?        00:00:00 pulseaudio
+   2150 ?        00:00:00 gnome-keyring-d
+   2162 ?        00:00:02 dbus-daemon
+   2178 ?        00:00:00 xdg-document-po
+   2182 ?        00:00:00 xdg-permission-
+   2209 tty2     00:00:00 gdm-wayland-ses
+   2212 tty2     00:00:00 gnome-session-b
+   2259 ?        00:00:00 gnome-session-c
+   2269 ?        00:00:00 gvfsd
+   2277 ?        00:00:00 gvfsd-fuse
+   2282 ?        00:00:00 gnome-session-b
+   2307 ?        00:00:00 at-spi-bus-laun
+   2308 ?        00:09:04 gnome-shell
+   2316 ?        00:00:00 dbus-daemon
+   2388 ?        00:00:00 gnome-shell-cal
+   2394 ?        00:00:00 evolution-sourc
+   2395 ?        00:00:00 gvfs-udisks2-vo
+   2404 ?        00:00:00 goa-daemon
+   2407 ?        00:00:00 gvfs-gphoto2-vo
+   2412 ?        00:00:00 evolution-calen
+   2417 ?        00:00:00 goa-identity-se
+   2426 ?        00:00:00 gvfs-goa-volume
+   2431 ?        00:00:00 gvfs-mtp-volume
+   2437 ?        00:00:00 gvfs-afc-volume
+   2446 ?        00:00:00 dconf-service
+   2447 ?        00:00:00 evolution-addre
+   2465 ?        00:00:00 gvfsd-trash
+   2466 ?        00:00:00 gvfsd-metadata
+   2481 ?        00:00:00 gjs
+   2482 ?        00:00:00 at-spi2-registr
+   2497 ?        00:00:00 sh
+   2498 ?        00:00:00 gsd-a11y-settin
+   2499 ?        00:00:00 gsd-color
+   2501 ?        00:00:38 ibus-daemon
+   2502 ?        00:00:00 gsd-datetime
+   2503 ?        00:00:00 gsd-housekeepin
+   2505 ?        00:00:00 gsd-keyboard
+   2507 ?        00:00:00 gsd-media-keys
+   2509 ?        00:00:00 gsd-power
+   2511 ?        00:00:00 gsd-print-notif
+   2514 ?        00:00:00 gsd-rfkill
+   2516 ?        00:00:00 gsd-screensaver
+   2518 ?        00:00:00 gsd-sharing
+   2520 ?        00:00:00 gsd-smartcard
+   2522 ?        00:00:00 gsd-sound
+   2527 ?        00:00:00 gsd-wacom
+   2557 ?        00:00:00 evolution-alarm
+   2582 ?        00:00:00 gsd-disk-utilit
+   2629 ?        00:00:00 ibus-memconf
+   2632 ?        00:00:04 ibus-extension-
+   2635 ?        00:00:00 ibus-portal
+   2666 ?        00:00:02 snap-store
+   2672 ?        00:00:14 ibus-engine-sim
+   2721 ?        00:00:00 gsd-printer
+   2724 ?        00:00:00 tracker-miner-f
+   2753 ?        00:00:00 gjs
+   2783 ?        00:00:00 xdg-desktop-por
+   2788 ?        00:00:04 xdg-desktop-por
+   2816 ?        00:00:00 xdg-desktop-por
+   3007 ?        00:00:00 snapd-desktop-i
+   3079 ?        00:00:00 snapd-desktop-i
+   3281 ?        00:00:00 Xwayland
+   3313 ?        00:00:00 gsd-xsettings
+   3361 ?        00:00:00 ibus-x11
+   4272 ?        00:00:00 gnome-calendar
+   4733 ?        00:00:00 update-notifier
+   6156 ?        00:00:00 ssh-agent
+   7179 ?        00:00:56 code
+   7184 ?        00:00:00 code
+   7185 ?        00:00:00 code
+   7187 ?        00:00:00 code
+   7228 ?        00:00:00 chrome_crashpad
+   7269 ?        00:00:53 code
+   7275 ?        00:00:03 code
+   7330 ?        00:01:31 code
+   7364 ?        00:00:15 code
+   7389 ?        00:01:27 code
+   9122 ?        00:02:01 Telegram
+  10126 ?        00:00:37 obsidian
+  10187 ?        00:00:00 obsidian
+  10188 ?        00:00:00 obsidian
+  10276 ?        00:01:00 obsidian
+  10302 ?        00:00:00 obsidian
+  10494 ?        00:00:00 gvfsd-network
+  10511 ?        00:00:00 gvfsd-dnssd
+  10523 ?        00:00:00 gvfsd-recent
+  10555 ?        00:02:18 obsidian
+  12337 ?        00:00:00 gnome-terminal
+  12340 ?        00:00:00 gnome-terminal.
+  12345 ?        00:01:44 gnome-terminal-
+  12363 pts/1    00:00:01 bash
+  13273 ?        00:03:16 firefox
+  13425 ?        00:00:00 forkserver
+  13430 ?        00:00:00 Socket Process
+  13457 ?        00:00:06 Privileged Cont
+  13466 ?        00:00:00 RDD Process
+  13529 ?        00:00:08 WebExtensions
+  13588 ?        00:00:00 Utility Process
+  13959 ?        00:02:10 Isolated Web Co
+  14075 ?        00:00:00 Web Content
+  14149 ?        00:00:01 Web Content
+  14217 ?        00:00:04 Web Content
+  14424 ?        00:00:03 code
+  14439 ?        00:00:17 code
+  14471 ?        00:00:00 code
+  14893 ?        00:00:00 gnome-terminal
+  14896 ?        00:00:00 gnome-terminal.
+  14901 pts/0    00:00:00 bash
+  15356 ?        00:00:00 gjs
+  16259 pts/1    00:00:00 ps
+--- All processes (snapshot) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 168088 13724 ?        Ss   Apr08   0:02 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    Apr08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Apr08   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   Apr08   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    Apr08   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    Apr08   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    Apr08   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    Apr08   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    Apr08   0:06 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    Apr08   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    Apr08   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    Apr08   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    Apr08   0:00 [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    Apr08   0:00 [idle_inject/2]
+--- Process tree ---
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           2       0  0 Apr08 ?        00:00:00 [kthreadd]
+root           3       2  0 Apr08 ?        00:00:00  \_ [pool_workqueue_release]
+root           4       2  0 Apr08 ?        00:00:00  \_ [kworker/R-rcu_g]
+root           5       2  0 Apr08 ?        00:00:00  \_ [kworker/R-rcu_p]
+root           6       2  0 Apr08 ?        00:00:00  \_ [kworker/R-slub_]
+root           7       2  0 Apr08 ?        00:00:00  \_ [kworker/R-netns]
+root           9       2  0 Apr08 ?        00:00:00  \_ [kworker/0:0H-events_highpri]
+root          12       2  0 Apr08 ?        00:00:00  \_ [kworker/R-mm_pe]
+root          13       2  0 Apr08 ?        00:00:00  \_ [rcu_tasks_kthread]
+root          14       2  0 Apr08 ?        00:00:00  \_ [rcu_tasks_rude_kthread]
+root          15       2  0 Apr08 ?        00:00:00  \_ [rcu_tasks_trace_kthread]
+root          16       2  0 Apr08 ?        00:00:00  \_ [ksoftirqd/0]
+root          17       2  0 Apr08 ?        00:00:06  \_ [rcu_preempt]
+root          18       2  0 Apr08 ?        00:00:00  \_ [migration/0]
+root          19       2  0 Apr08 ?        00:00:00  \_ [idle_inject/0]
+root          20       2  0 Apr08 ?        00:00:00  \_ [cpuhp/0]
+root          21       2  0 Apr08 ?        00:00:00  \_ [cpuhp/2]
+root          22       2  0 Apr08 ?        00:00:00  \_ [idle_inject/2]
+root          23       2  0 Apr08 ?        00:00:00  \_ [migration/2]
+root          24       2  0 Apr08 ?        00:00:00  \_ [ksoftirqd/2]
+root          26       2  0 Apr08 ?        00:00:00  \_ [kworker/2:0H-events_highpri]
+root          27       2  0 Apr08 ?        00:00:00  \_ [cpuhp/4]
+root          28       2  0 Apr08 ?        00:00:00  \_ [idle_inject/4]
+root          29       2  0 Apr08 ?        00:00:00  \_ [migration/4]
+root          30       2  0 Apr08 ?        00:00:00  \_ [ksoftirqd/4]
+root          32       2  0 Apr08 ?        00:00:00  \_ [kworker/4:0H-events_highpri]
+root          33       2  0 Apr08 ?        00:00:00  \_ [cpuhp/6]
+root          34       2  0 Apr08 ?        00:00:00  \_ [idle_inject/6]
+root          35       2  0 Apr08 ?        00:00:00  \_ [migration/6]
+--- Top 10 CPU consumers (via ps, not top) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+syphon      2308  6.3  3.3 10416712 543084 ?     Rsl  Apr08   9:17 /usr/bin/gnome-shell
+syphon     13273  3.9  4.1 4334148 666408 ?      Sl   00:28   3:16 /usr/lib/firefox/firefox
+syphon     13959  2.6  3.6 3305028 581044 ?      Sl   00:30   2:10 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:45509 -prefMapHandle 1:284618 -jsInitHandle 2:156136 -parentBuildID 20260403140140 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {87db4a7a-7e46-465b-9ec9-f7bac5b9de95} -parentPid 13273 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 12 tab
+syphon     10555  2.1  1.9 1482058272 311288 ?   Sl   Apr08   2:24 /proc/self/exe --type=renderer --enable-crash-reporter=3e45e91d-d64d-4696-baa8-1a4f4fd25f2f,no_channel --user-data-dir=/home/syphon/snap/obsidian/62/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --app-path=/snap/obsidian/62/resources/app.asar --no-sandbox --no-zygote --node-integration-in-worker --no-sandbox --ozone-platform=wayland --lang=en-GB --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1775665508784943 --launch-time-ticks=2047729106 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,4337665456103710684,8145581763362372069,262144 --enable-features=PdfUseShowSaveFilePicker,SharedArrayBuffer --disable-features=LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708991934122588 --log-level=3
+syphon     12345  1.7  0.7 631072 122556 ?       Ssl  00:08   1:47 /usr/libexec/gnome-terminal-server
+syphon      9122  1.6  3.8 2043684 621480 ?      Sl   Apr08   2:01 /home/syphon/Applications/Telegram/Telegram
+syphon      7330  1.1  2.2 1480298428 365036 ?   Sl   Apr08   1:40 /usr/share/code/code --type=zygote
+syphon      7389  1.0  1.0 1461333540 172860 ?   Sl   Apr08   1:29 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=7228 --enable-crash-reporter=0679f0ea-075d-4207-afe7-ed150f7cc307,no_channel --user-data-dir=/home/syphon/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,8472443173914197758,17717815249476332152,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708992871164437
+syphon     10276  0.9  1.1 34851676 183472 ?     Sl   Apr08   1:02 /snap/obsidian/62/obsidian --type=zygote --no-zygote-sandbox --no-sandbox
+syphon      7179  0.7  1.7 1461719856 278856 ?   SLl  Apr08   0:59 /usr/share/code/code
+--- Top 10 memory consumers ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+syphon     13273  3.9  4.1 4331076 657104 ?      Sl   00:28   3:16 /usr/lib/firefox/firefox
+syphon      9122  1.6  3.8 2043684 621480 ?      Sl   Apr08   2:01 /home/syphon/Applications/Telegram/Telegram
+syphon     13959  2.6  3.4 3276356 544696 ?      Sl   00:30   2:10 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:45509 -prefMapHandle 1:284618 -jsInitHandle 2:156136 -parentBuildID 20260403140140 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {87db4a7a-7e46-465b-9ec9-f7bac5b9de95} -parentPid 13273 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 12 tab
+syphon      2308  6.3  3.3 10416880 543136 ?     Ssl  Apr08   9:18 /usr/bin/gnome-shell
+syphon     14439  0.4  2.4 1461345004 386304 ?   Sl   00:38   0:18 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=7228 --enable-crash-reporter=0679f0ea-075d-4207-afe7-ed150f7cc307,no_channel --user-data-dir=/home/syphon/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,8472443173914197758,17717815249476332152,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190709005989750323
+syphon      7330  1.1  2.2 1480298300 365248 ?   Sl   Apr08   1:40 /usr/share/code/code --type=zygote
+syphon     10555  2.1  1.9 1482058272 311924 ?   Sl   Apr08   2:25 /proc/self/exe --type=renderer --enable-crash-reporter=3e45e91d-d64d-4696-baa8-1a4f4fd25f2f,no_channel --user-data-dir=/home/syphon/snap/obsidian/62/.config/obsidian --standard-schemes=app --secure-schemes=app --fetch-schemes=app --streaming-schemes=app --code-cache-schemes=app --app-path=/snap/obsidian/62/resources/app.asar --no-sandbox --no-zygote --node-integration-in-worker --no-sandbox --ozone-platform=wayland --lang=en-GB --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1775665508784943 --launch-time-ticks=2047729106 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,4337665456103710684,8145581763362372069,262144 --enable-features=PdfUseShowSaveFilePicker,SharedArrayBuffer --disable-features=LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708991934122588 --log-level=3
+syphon      7179  0.7  1.7 1461715624 278728 ?   SLl  Apr08   0:59 /usr/share/code/code
+syphon     10126  0.5  1.4 1476803400 232648 ?   SLl  Apr08   0:39 /snap/obsidian/62/obsidian --no-sandbox
+syphon     13529  0.1  1.3 19671092 209264 ?     Sl   00:28   0:08 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:40523 -prefMapHandle 1:284618 -jsInitHandle 2:156136 -parentBuildID 20260403140140 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {863117f5-9450-4be4-8fb5-afdcc1127f9e} -parentPid 13273 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 5 tab
+--- Background jobs ---
+[1]- 16788 Running                 sleep 300 &
+[2]+ 16790 Running                 sleep 500 &
+--- After Ctrl+Z (stopped job) ---
+[1]  16788 Running                 sleep 300 &
+[2]- 16790 Running                 sleep 500 &
+[3]+ 16814 Stopped                 sleep 600
+--- After bg (resumed in background) ---
+[1]  16788 Running                 sleep 300 &
+[2]- 16790 Running                 sleep 500 &
+[3]+ 16814 Running                 sleep 600 &
+--- After terminating all sleep jobs ---
+[1]- 16788 Terminated              sleep 300
+[2]+ 16790 Terminated              sleep 500
+Started sleep with PID: 16858
+--- Available signals ---
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+--- After SIGSTOP ---
+    PID STAT CMD
+  16858 S    sleep 1000
+--- After SIGCONT ---
+    PID STAT CMD
+  16858 S    sleep 1000
+--- After SIGTERM ---
+    PID STAT CMD
+--- nohup demo ---
+nohup sleep PID: 16976
+-rw------- 1 syphon syphon 0 Apr  9 02:04 nohup.out
+--- Challenge Process Management ---
+    PID TTY          TIME CMD
+  12363 pts/1    00:00:01 bash
+  17174 pts/1    00:00:00  \_ sleep
+  17179 pts/1    00:00:00  \_ sleep
+  17181 pts/1    00:00:00  \_ sleep
+  17199 pts/1    00:00:00  \_ ps
+12363
+14901

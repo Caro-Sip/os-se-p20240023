@@ -1,4 +1,4 @@
-ls: cannot access '/nonexist': No such file or directory
+ls: cannot access '/nonexistent_directory': No such file or directory
 /etc:
 acpi
 adduser.conf
