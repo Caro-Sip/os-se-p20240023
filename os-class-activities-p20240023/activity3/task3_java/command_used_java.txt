@@ -1,0 +1,30 @@
+ 1983  mkdir -p lab9
+ 1984  cd lab9
+ 1985  mkdir -p images scripts
+ 1986  mkdir -p ~/bin
+ 1987  git add .
+ 1988  git commit -m "Start of Lab 9"
+ 1989  git checkout -b Activity3
+ 1990  cd ../..
+ 1991  exit
+ 1992  cd -
+ 1993  cd os-class-activities-p20240023/activity3/
+ 1994  mkdir task3_java
+ 1995  cd task3_java/
+ 1996  code ThreadDemo.java
+ 1997  javac ThreadDemo.java
+ 1998  java ThreadDemo 
+ 1999  java ThreadDemo > result_thread_demo.txt 2>&1
+ 2000  cat result_thread_demo.txt 
+ 2001  code RunnableDemo.java
+ 2002  javac RunnableDemo.java
+ 2003  java RunnableDemo > result_runnable_demo.txt
+ 2004  java RunnableDemo > result_runnable_demo.txt 2>&1
+ 2005  cat result_runnable_demo.txt 
+ 2006  code PoolDemo.java
+ 2007  javac PoolDemo.java 
+ 2008  java PoolDemo 
+ 2009  java PoolDemo 2>&1
+ 2010  java PoolDemo > result_pool_demo.txt 2>&1
+ 2011  cat result_pool_demo.txt 
+ 2012  history | tail -n 30 > command_used_java.txt

@@ -1,0 +1,28 @@
+syphon     45819   34814   45819  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     45819   34814   45821  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     45819   34814   45822  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     45819   34814   45823  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     45819   34814   45824  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46021   34814   46021  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46021   34814   46023  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46021   34814   46024  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46021   34814   46025  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46021   34814   46026  0    5 20:57 pts/0    00:00:00 ./threads_observe
+syphon     46975   34814   46975  0    5 20:59 pts/0    00:00:00 ./threads_observe
+syphon     46975   34814   46977  0    5 20:59 pts/0    00:00:00 ./threads_observe
+syphon     46975   34814   46978  0    5 20:59 pts/0    00:00:00 ./threads_observe
+syphon     46975   34814   46979  0    5 20:59 pts/0    00:00:00 ./threads_observe
+syphon     46975   34814   46980  0    5 20:59 pts/0    00:00:00 ./threads_observe
+syphon     47522   47359   47522  0    1 21:00 pts/2    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+  46975   46975 pts/0    00:00:00 threads_observe
+  46975   46977 pts/0    00:00:00 threads_observe
+  46975   46978 pts/0    00:00:00 threads_observe
+  46975   46979 pts/0    00:00:00 threads_observe
+  46975   46980 pts/0    00:00:00 threads_observe
+--- /proc/46975/task/ listing ---
+46975
+46977
+46978
+46979
+46980

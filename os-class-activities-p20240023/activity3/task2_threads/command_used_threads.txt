@@ -1,0 +1,20 @@
+ 1988  code /home/syphon/ITC-OS-2026/lectures/
+ 1989  code /home/syphon/ITC-OS-2026/lectures/class-activity/class-activity6.md 
+ 1990  ./Applications/
+ 1991  ./Applications/Antigravity\ IDE/antigravity-ide 
+ 1992  ./client
+ 1993  cd ..
+ 1994  mkdir task2_threads
+ 1995  cd task2_threads/
+ 1996  code threads.c
+ 1997  gcc -o threads threads.c -pthread
+ 1998  ./threads > result_threads.txt 2>&1
+ 1999  cat result_threads.txt 
+ 2000  code threads_mutex.c
+ 2001  gcc -o threads_mutex threads_mutex.c -pthread
+ 2002  ./threasds_mutex > result_threads_mutex.txt 2>&1
+ 2003  cat result_threads_mutex.txt
+ 2004  ls
+ 2005  ./threads_mutex > result_threads_mutex.txt 2>&1
+ 2006  cat result_threads_mutex.txt
+ 2007  history | tail -n 20 > command_used_threads.txt
