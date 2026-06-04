@@ -1,0 +1,227 @@
+================================================================================
+CLASS ACTIVITY 5 - SUBMISSION CHECKLIST
+================================================================================
+
+✓ NAMING CONVENTIONS - EXACT MATCH WITH ASSIGNMENT DOCUMENT
+
+File Naming:
+  ✓ task1_particles/particles_before.java
+  ✓ task1_particles/particles_after.java
+  ✓ task2_hello/hello_before.java
+  ✓ task2_hello/hello_after.java
+  ✓ README.md
+
+Directory Structure:
+  ✓ activity5/
+      ├── README.md
+      ├── task1_particles/
+      │   ├── particles_before.java
+      │   └── particles_after.java
+      ├── task2_hello/
+      │   ├── hello_before.java
+      │   └── hello_after.java
+      └── screenshots/
+          ├── task1_before_semaphore.png (YOU NEED TO ADD)
+          ├── task1_after_semaphore.png (YOU NEED TO ADD)
+          ├── task2_before_semaphore.png (YOU NEED TO ADD)
+          └── task2_after_semaphore.png (YOU NEED TO ADD)
+
+================================================================================
+WHAT YOU NEED TO DO BEFORE SUBMISSION
+================================================================================
+
+1. REPLACE IN README.md:
+   - [Your Name] → Your actual name
+   - [Your ID] → Your student ID
+   - [Current Date] → Today's date
+
+2. COMPILE ALL PROGRAMS:
+   javac task1_particles/*.java task2_hello/*.java
+
+3. RUN EACH PROGRAM AND TAKE SCREENSHOTS:
+
+   Screenshot 1: task1_before_semaphore.png
+   Command: java -cp task1_particles particles_before
+   Show: Error message or broken behavior (program should crash)
+   
+   Screenshot 2: task1_after_semaphore.png
+   Command: java -cp task1_particles particles_after
+   Show: Clean output with counter values running correctly
+   
+   Screenshot 3: task2_before_semaphore.png
+   Command: java -cp task2_hello hello_before
+   Show: Unpredictable/wrong output (not always HELLO)
+   
+   Screenshot 4: task2_after_semaphore.png
+   Command: java -cp task2_hello hello_after
+   Show: Three iterations all printing HELLO
+
+4. SAVE SCREENSHOTS:
+   - Save as PNG files
+   - Place in: activity5/screenshots/
+   - Exact filenames (as above)
+
+5. VERIFY ALL QUESTIONS ARE ANSWERED:
+   README.md contains answers to:
+   ✓ Question 1: Why does a producer need to wait before adding?
+   ✓ Question 2: Why does the consumer need to wait before removing?
+   ✓ Question 3: Which semaphore protects the critical section?
+   ✓ Question 4: How does your program verify pairs belong together?
+   ✓ Question 5: Why can letters print in wrong order without semaphores?
+   ✓ Question 6: Which semaphore forces H to print first?
+   ✓ Question 7: What could cause deadlock?
+
+================================================================================
+QUICK REFERENCE: RUNNING THE PROGRAMS
+================================================================================
+
+Compile:
+  javac task1_particles/*.java task2_hello/*.java
+
+Run Task 1A (Before - will error):
+  java -cp task1_particles particles_before
+
+Run Task 1B (After - runs forever):
+  java -cp task1_particles particles_after
+
+Run Task 2A (Before - unpredictable):
+  java -cp task2_hello hello_before
+
+Run Task 2B (After - always HELLO):
+  java -cp task2_hello hello_after
+
+Or use interactive menu:
+  ./run.sh         (Linux/Mac/WSL)
+  run.bat          (Windows)
+
+================================================================================
+FINAL STRUCTURE FOR SUBMISSION
+================================================================================
+
+os-se-<YourStudentID>/
+└── os-class-activities-<YourStudentID>/
+    └── activity5/
+        ├── README.md
+        ├── task1_particles/
+        │   ├── particles_before.java
+        │   └── particles_after.java
+        ├── task2_hello/
+        │   ├── hello_before.java
+        │   └── hello_after.java
+        └── screenshots/
+            ├── task1_before_semaphore.png
+            ├── task1_after_semaphore.png
+            ├── task2_before_semaphore.png
+            └── task2_after_semaphore.png
+
+================================================================================
+EXPECTED BEHAVIOR
+================================================================================
+
+particles_before:
+  → Shows: Produced pairs: X | Packaged pairs: Y | Buffer particles: Z
+  → Then crashes with error like "Pairs are incorrect"
+  
+particles_after:
+  → Shows: Produced pairs: X | Packaged pairs: Y | Buffer particles: Z
+  → Continues infinitely without errors
+  → Press Ctrl+C to stop
+  
+hello_before:
+  → Shows 5 iterations with different output each time
+  → Might show: LEHLO, HELLO, ELLHO, etc.
+  → Demonstrates randomness
+  
+hello_after:
+  → Shows 3 iterations all printing HELLO
+  → Each iteration: "Iteration 1: HELLO"
+  → Message: "✓ SUCCESS: All iterations printed HELLO..."
+
+================================================================================
+VERIFICATION POINTS
+================================================================================
+
+Code Quality:
+  ✓ Uses java.util.concurrent.Semaphore (correct class)
+  ✓ Three semaphores used: emptyPairs, fullPairs, mutex
+  ✓ try-finally blocks ensure signals always called
+  ✓ Proper error checking with required messages
+
+Task 1 Correctness:
+  ✓ Particle format: M<id>-<pairId>-<type> (e.g., M2-17-P1)
+  ✓ Error messages match exactly:
+    - "The producing machine is broken"
+    - "The packaging machine is broken"
+    - "Pairs are incorrect"
+  ✓ Buffer capacity: 100 particles (50 pairs)
+  ✓ Initial semaphore values: 50, 0, 1
+
+Task 2 Correctness:
+  ✓ Three processes/threads
+  ✓ Output exactly: HELLO
+  ✓ Always in correct order
+  ✓ Uses semaphores for ordering (no random sleeps as main sync)
+
+Documentation:
+  ✓ README.md exists with student info
+  ✓ All 7 questions answered thoroughly
+  ✓ Compilation instructions provided
+  ✓ All 4 screenshots referenced in README
+
+================================================================================
+COMMON ISSUES & FIXES
+================================================================================
+
+"javac: command not found"
+  → Install Java JDK (not just JRE)
+  → Check PATH includes javac
+
+"particles_before crashes immediately"
+  → CORRECT! This is expected behavior for unsafe version
+  → Document the error in your screenshot
+
+"hello_before shows HELLO every time"
+  → Run it multiple times
+  → You'll see different output eventually
+  → Or add more iterations in code (change 5 to 20)
+
+"Compilation errors"
+  → Check you're in the right directory (activity5/)
+  → Make sure filenames are lowercase (particles_before.java, etc.)
+  → Use Java 8 or later
+
+"Programs won't run"
+  → Make sure you're in activity5 directory
+  → Use: java -cp task1_particles particles_before
+  → NOT: java particles_before.java
+
+================================================================================
+TIPS FOR SUCCESS
+================================================================================
+
+1. Compile before taking screenshots
+2. Run each program several times to see different behaviors
+3. The "before" versions are supposed to show problems
+4. The "after" versions should run perfectly
+5. Read the code comments - they explain the logic
+6. Reference README.md when answering questions
+7. Check that your screenshots show clear terminal output
+8. Save screenshots as PNG (not BMP or other formats)
+
+================================================================================
+YOU ARE READY TO SUBMIT WHEN:
+================================================================================
+
+✓ All 4 Java files exist with exact names
+✓ README.md has your name and ID
+✓ All source code compiles without errors
+✓ All 4 programs run as expected
+✓ All 4 screenshots are in screenshots/ folder
+✓ All 7 questions are answered in README.md
+✓ Directory structure matches assignment requirements
+
+================================================================================
+
+Good luck with your submission! All the code and documentation is ready.
+Just compile, take screenshots, add your info, and you're done!
+
