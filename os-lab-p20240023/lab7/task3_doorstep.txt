@@ -1,0 +1,6 @@
+========================================
+Welcome, syphon
+Users currently logged in: 1
+Server uptime: up 1 hour, 20 minutes
+Random tech quote: Keep calm and check the logs.
+========================================

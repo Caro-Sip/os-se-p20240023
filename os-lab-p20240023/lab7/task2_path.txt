@@ -1,0 +1,7 @@
+]633;E;echo "=== PATH ===";2ce74ff6-e6d3-420c-ba65-94d3fd8ad541]633;C=== PATH ===
+/home/syphon/bin:/home/syphon/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/syphon/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/syphon/.local/bin:/home/syphon/bin:/home/syphon/.local/bin:/home/syphon/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+=== warmup location ===
+/home/syphon/bin/warmup
+=== warmup command output ===
+Hello from my first script! My current directory is:
+/home/syphon/os-se-p20240023/os-lab-p20240023/lab7
