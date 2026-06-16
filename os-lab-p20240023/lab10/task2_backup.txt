@@ -1,0 +1,9 @@
+{
+    echo "=== backup script permissions ==="
+    ls -l ~/bin/backup_project
+    echo "=== archives kept (should be 3) ==="
+    ls -1t ~/os-lab-automation/backups/project_*.tar.gz
+    echo "=== backup log ==="
+    cat ~/os-lab-automation/logs/backup_project.log
+} > ~/os-se-p20240023/os-lab-p20240023/lab10/task2_backup.txt
+cat ~/os-se-p20240023/os-lab-p20240023/lab10/task2_backup.txt

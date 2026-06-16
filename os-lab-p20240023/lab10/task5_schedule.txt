@@ -1,0 +1,248 @@
+=== my username ===
+se-suon-caro
+=== installed cron jobs ===
+# Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+45 14 16 6 * /home/se-suon-caro/bin/lab_session_job >> /home/se-suon-caro/os-lab-automation/logs/cron_session_job.log 2>&1
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+30 14 22 6 * /home/se-suon-caro/bin/deadline_job >> /home/se-suon-caro/os-lab-automation/logs/cron_deadline_job.log 2>&1
+
+# Lab10 my own job - match the server repo matching the remote repo
+0 * * * * /home/se-suon-caro/bin/my_automation >> /home/se-suon-caro/os-lab-automation/logs/cron_my_automation.log 2>&1
+=== archives produced by cron ===
+/home/se-suon-caro/os-lab-automation/backups/project_20260616_161601.tar.gz
+/home/se-suon-caro/os-lab-automation/backups/project_20260616_161401.tar.gz
+/home/se-suon-caro/os-lab-automation/backups/project_20260616_161201.tar.gz
+=== backup log (note the new timestamps from cron) ===
+2026-06-16 13:52:06 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 13:52:06 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135206.tar.gz
+2026-06-16 13:52:06 | no old archives to prune
+2026-06-16 13:52:06 | backup finished successfully
+2026-06-16 13:52:07 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 13:52:07 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135207.tar.gz
+2026-06-16 13:52:07 | no old archives to prune
+2026-06-16 13:52:07 | backup finished successfully
+2026-06-16 13:52:08 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 13:52:09 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135208.tar.gz
+2026-06-16 13:52:09 | no old archives to prune
+2026-06-16 13:52:09 | backup finished successfully
+2026-06-16 13:52:10 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 13:52:10 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135210.tar.gz
+2026-06-16 13:52:10 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135206.tar.gz
+2026-06-16 13:52:10 | backup finished successfully
+2026-06-16 14:30:02 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:30:02 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143002.tar.gz
+2026-06-16 14:30:02 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135207.tar.gz
+2026-06-16 14:30:02 | backup finished successfully
+2026-06-16 14:32:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:32:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143201.tar.gz
+2026-06-16 14:32:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135208.tar.gz
+2026-06-16 14:32:01 | backup finished successfully
+2026-06-16 14:34:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:34:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143401.tar.gz
+2026-06-16 14:34:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_135210.tar.gz
+2026-06-16 14:34:01 | backup finished successfully
+2026-06-16 14:36:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:36:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143601.tar.gz
+2026-06-16 14:36:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143002.tar.gz
+2026-06-16 14:36:01 | backup finished successfully
+2026-06-16 14:38:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:38:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143801.tar.gz
+2026-06-16 14:38:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143201.tar.gz
+2026-06-16 14:38:01 | backup finished successfully
+2026-06-16 14:40:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:40:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144001.tar.gz
+2026-06-16 14:40:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143401.tar.gz
+2026-06-16 14:40:01 | backup finished successfully
+2026-06-16 14:42:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:42:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144201.tar.gz
+2026-06-16 14:42:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143601.tar.gz
+2026-06-16 14:42:01 | backup finished successfully
+2026-06-16 14:44:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:44:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144401.tar.gz
+2026-06-16 14:44:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_143801.tar.gz
+2026-06-16 14:44:01 | backup finished successfully
+2026-06-16 14:46:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:46:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144601.tar.gz
+2026-06-16 14:46:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144001.tar.gz
+2026-06-16 14:46:01 | backup finished successfully
+2026-06-16 14:48:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:48:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144801.tar.gz
+2026-06-16 14:48:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144201.tar.gz
+2026-06-16 14:48:01 | backup finished successfully
+2026-06-16 14:50:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:50:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145001.tar.gz
+2026-06-16 14:50:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144401.tar.gz
+2026-06-16 14:50:01 | backup finished successfully
+2026-06-16 14:52:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:52:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145201.tar.gz
+2026-06-16 14:52:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144601.tar.gz
+2026-06-16 14:52:01 | backup finished successfully
+2026-06-16 14:54:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:54:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145401.tar.gz
+2026-06-16 14:54:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_144801.tar.gz
+2026-06-16 14:54:01 | backup finished successfully
+2026-06-16 14:56:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:56:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145601.tar.gz
+2026-06-16 14:56:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145001.tar.gz
+2026-06-16 14:56:01 | backup finished successfully
+2026-06-16 14:58:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 14:58:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145801.tar.gz
+2026-06-16 14:58:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145201.tar.gz
+2026-06-16 14:58:01 | backup finished successfully
+2026-06-16 15:00:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:00:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150001.tar.gz
+2026-06-16 15:00:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145401.tar.gz
+2026-06-16 15:00:01 | backup finished successfully
+2026-06-16 15:02:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:02:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150201.tar.gz
+2026-06-16 15:02:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145601.tar.gz
+2026-06-16 15:02:01 | backup finished successfully
+2026-06-16 15:04:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:04:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150401.tar.gz
+2026-06-16 15:04:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_145801.tar.gz
+2026-06-16 15:04:01 | backup finished successfully
+2026-06-16 15:06:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:06:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150601.tar.gz
+2026-06-16 15:06:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150001.tar.gz
+2026-06-16 15:06:01 | backup finished successfully
+2026-06-16 15:08:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:08:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150801.tar.gz
+2026-06-16 15:08:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150201.tar.gz
+2026-06-16 15:08:01 | backup finished successfully
+2026-06-16 15:10:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:10:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151001.tar.gz
+2026-06-16 15:10:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150401.tar.gz
+2026-06-16 15:10:01 | backup finished successfully
+2026-06-16 15:12:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:12:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151201.tar.gz
+2026-06-16 15:12:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150601.tar.gz
+2026-06-16 15:12:01 | backup finished successfully
+2026-06-16 15:14:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:14:02 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151401.tar.gz
+2026-06-16 15:14:02 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_150801.tar.gz
+2026-06-16 15:14:02 | backup finished successfully
+2026-06-16 15:16:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:16:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151601.tar.gz
+2026-06-16 15:16:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151001.tar.gz
+2026-06-16 15:16:01 | backup finished successfully
+2026-06-16 15:18:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:18:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151801.tar.gz
+2026-06-16 15:18:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151201.tar.gz
+2026-06-16 15:18:01 | backup finished successfully
+2026-06-16 15:20:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:20:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152001.tar.gz
+2026-06-16 15:20:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151401.tar.gz
+2026-06-16 15:20:01 | backup finished successfully
+2026-06-16 15:22:02 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:22:02 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152202.tar.gz
+2026-06-16 15:22:02 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151601.tar.gz
+2026-06-16 15:22:02 | backup finished successfully
+2026-06-16 15:24:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:24:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152401.tar.gz
+2026-06-16 15:24:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_151801.tar.gz
+2026-06-16 15:24:01 | backup finished successfully
+2026-06-16 15:26:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:26:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152601.tar.gz
+2026-06-16 15:26:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152001.tar.gz
+2026-06-16 15:26:01 | backup finished successfully
+2026-06-16 15:28:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:28:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152801.tar.gz
+2026-06-16 15:28:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152202.tar.gz
+2026-06-16 15:28:01 | backup finished successfully
+2026-06-16 15:30:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:30:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153001.tar.gz
+2026-06-16 15:30:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152401.tar.gz
+2026-06-16 15:30:01 | backup finished successfully
+2026-06-16 15:32:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:32:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153201.tar.gz
+2026-06-16 15:32:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152601.tar.gz
+2026-06-16 15:32:01 | backup finished successfully
+2026-06-16 15:34:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:34:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153401.tar.gz
+2026-06-16 15:34:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_152801.tar.gz
+2026-06-16 15:34:01 | backup finished successfully
+2026-06-16 15:36:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:36:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153601.tar.gz
+2026-06-16 15:36:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153001.tar.gz
+2026-06-16 15:36:01 | backup finished successfully
+2026-06-16 15:38:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:38:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153801.tar.gz
+2026-06-16 15:38:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153201.tar.gz
+2026-06-16 15:38:01 | backup finished successfully
+2026-06-16 15:40:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:40:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154001.tar.gz
+2026-06-16 15:40:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153401.tar.gz
+2026-06-16 15:40:01 | backup finished successfully
+2026-06-16 15:42:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:42:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154201.tar.gz
+2026-06-16 15:42:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153601.tar.gz
+2026-06-16 15:42:01 | backup finished successfully
+2026-06-16 15:44:02 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:44:02 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154402.tar.gz
+2026-06-16 15:44:02 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_153801.tar.gz
+2026-06-16 15:44:02 | backup finished successfully
+2026-06-16 15:46:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:46:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154601.tar.gz
+2026-06-16 15:46:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154001.tar.gz
+2026-06-16 15:46:01 | backup finished successfully
+2026-06-16 15:48:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:48:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154801.tar.gz
+2026-06-16 15:48:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154201.tar.gz
+2026-06-16 15:48:01 | backup finished successfully
+2026-06-16 15:50:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:50:02 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155001.tar.gz
+2026-06-16 15:50:02 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154402.tar.gz
+2026-06-16 15:50:02 | backup finished successfully
+2026-06-16 15:52:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:52:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155201.tar.gz
+2026-06-16 15:52:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154601.tar.gz
+2026-06-16 15:52:01 | backup finished successfully
+2026-06-16 15:54:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:54:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155401.tar.gz
+2026-06-16 15:54:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_154801.tar.gz
+2026-06-16 15:54:01 | backup finished successfully
+2026-06-16 15:56:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:56:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155601.tar.gz
+2026-06-16 15:56:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155001.tar.gz
+2026-06-16 15:56:01 | backup finished successfully
+2026-06-16 15:58:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 15:58:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155801.tar.gz
+2026-06-16 15:58:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155201.tar.gz
+2026-06-16 15:58:01 | backup finished successfully
+2026-06-16 16:00:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:00:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160001.tar.gz
+2026-06-16 16:00:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155401.tar.gz
+2026-06-16 16:00:01 | backup finished successfully
+2026-06-16 16:02:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:02:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160201.tar.gz
+2026-06-16 16:02:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155601.tar.gz
+2026-06-16 16:02:01 | backup finished successfully
+2026-06-16 16:04:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:04:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160401.tar.gz
+2026-06-16 16:04:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_155801.tar.gz
+2026-06-16 16:04:01 | backup finished successfully
+2026-06-16 16:06:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:06:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160601.tar.gz
+2026-06-16 16:06:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160001.tar.gz
+2026-06-16 16:06:01 | backup finished successfully
+2026-06-16 16:08:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:08:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160801.tar.gz
+2026-06-16 16:08:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160201.tar.gz
+2026-06-16 16:08:01 | backup finished successfully
+2026-06-16 16:10:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:10:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_161001.tar.gz
+2026-06-16 16:10:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160401.tar.gz
+2026-06-16 16:10:01 | backup finished successfully
+2026-06-16 16:12:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:12:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_161201.tar.gz
+2026-06-16 16:12:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160601.tar.gz
+2026-06-16 16:12:01 | backup finished successfully
+2026-06-16 16:14:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:14:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_161401.tar.gz
+2026-06-16 16:14:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_160801.tar.gz
+2026-06-16 16:14:01 | backup finished successfully
+2026-06-16 16:16:01 | starting backup of /home/se-suon-caro/os-lab-automation/project
+2026-06-16 16:16:01 | created archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_161601.tar.gz
+2026-06-16 16:16:01 | pruned old archive /home/se-suon-caro/os-lab-automation/backups/project_20260616_161001.tar.gz
+2026-06-16 16:16:01 | backup finished successfully
+=== captured cron output (empty = clean) ===

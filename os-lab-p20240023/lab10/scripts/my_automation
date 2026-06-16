@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -euo pipefail
+
+base="$HOME/os-lab-automation"
+logfile="$base/logs/my_automation.log"
+git_log="/home/se-suon-caro/git_pull.log"
+
+mkdir -p "$(dirname "$logfile")"
+
+# TODO: replace the line below with YOUR own automation task.
+
+cd /home/se-suon-caro/os-se-p20240023  
+
+echo "=== Fetch at $(date) ===" 2>&1 | tee -a "$git_log" "$logfile"
+git fetch origin 2>&1 | tee -a "$git_log" "$logfile"
+ 
+echo "=== Main points ===" 2>&1 | tee -a "$git_log" "$logfile"
+git reset --hard origin/main 2>&1 | tee -a "$git_log" "$logfile"
+ 
+echo "clean director and untracked files" 2>&1 | tee -a "$git_log" "$logfile"
+git clean -fdx 2>&1 | tee -a "$git_log" "$logfile"
+

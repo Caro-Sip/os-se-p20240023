@@ -1,0 +1,131 @@
+=== maintenance script permissions ===
+-rwxrwxr-x 1 se-suon-caro se-suon-caro 1084 Jun 16 15:39 /home/se-suon-caro/bin/maintenance
+=== installed cron jobs ===
+# Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+45 14 16 6 * /home/se-suon-caro/bin/lab_session_job >> /home/se-suon-caro/os-lab-automation/logs/cron_session_job.log 2>&1
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+30 14 22 6 * /home/se-suon-caro/bin/deadline_job >> /home/se-suon-caro/os-lab-automation/logs/cron_deadline_job.log 2>&1
+
+# Lab10 my own job - match the server repo matching the remote repo
+0 * * * * /home/se-suon-caro/bin/my_automation >> /home/se-suon-caro/os-lab-automation/logs/cron_my_automation.log 2>&1
+=== health report (multiple entries = cron ran it) ===
+----- health check at 2026-06-16 15:39:21 -----
+disk usage of home : 5%
+my processes       : 12
+load / uptime      :  15:39:21 up 21 days, 23:09, 13 users,  load average: 0.39, 0.29, 0.27
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:40:01 -----
+disk usage of home : 5%
+my processes       : 13
+load / uptime      :  15:40:01 up 21 days, 23:10, 13 users,  load average: 0.32, 0.28, 0.27
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:42:01 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  15:42:01 up 21 days, 23:12, 15 users,  load average: 0.25, 0.27, 0.27
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:44:02 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  15:44:02 up 21 days, 23:14, 16 users,  load average: 0.15, 0.21, 0.24
+logs rotated       : 1
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:46:01 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  15:46:01 up 21 days, 23:16, 16 users,  load average: 0.10, 0.17, 0.23
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:48:01 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  15:48:01 up 21 days, 23:18, 16 users,  load average: 0.32, 0.23, 0.24
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:50:02 -----
+disk usage of home : 5%
+my processes       : 15
+load / uptime      :  15:50:02 up 21 days, 23:20, 15 users,  load average: 0.28, 0.27, 0.25
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:52:01 -----
+disk usage of home : 5%
+my processes       : 13
+load / uptime      :  15:52:01 up 21 days, 23:22, 14 users,  load average: 0.15, 0.22, 0.24
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:54:01 -----
+disk usage of home : 5%
+my processes       : 14
+load / uptime      :  15:54:01 up 21 days, 23:24, 14 users,  load average: 0.13, 0.18, 0.22
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:56:01 -----
+disk usage of home : 5%
+my processes       : 14
+load / uptime      :  15:56:01 up 21 days, 23:26, 14 users,  load average: 0.10, 0.15, 0.20
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 15:58:01 -----
+disk usage of home : 5%
+my processes       : 21
+load / uptime      :  15:58:01 up 21 days, 23:28, 15 users,  load average: 0.54, 0.27, 0.23
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:00:01 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  16:00:01 up 21 days, 23:30, 15 users,  load average: 0.31, 0.28, 0.24
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:02:01 -----
+disk usage of home : 5%
+my processes       : 17
+load / uptime      :  16:02:01 up 21 days, 23:32, 15 users,  load average: 0.21, 0.26, 0.23
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:04:01 -----
+disk usage of home : 5%
+my processes       : 14
+load / uptime      :  16:04:01 up 21 days, 23:34, 14 users,  load average: 0.19, 0.21, 0.22
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:06:01 -----
+disk usage of home : 5%
+my processes       : 16
+load / uptime      :  16:06:01 up 21 days, 23:36, 15 users,  load average: 0.21, 0.22, 0.21
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:08:01 -----
+disk usage of home : 5%
+my processes       : 18
+load / uptime      :  16:08:01 up 21 days, 23:38, 16 users,  load average: 0.22, 0.20, 0.20
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:10:01 -----
+disk usage of home : 5%
+my processes       : 22
+load / uptime      :  16:10:01 up 21 days, 23:40, 15 users,  load average: 0.17, 0.20, 0.20
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:12:01 -----
+disk usage of home : 5%
+my processes       : 16
+load / uptime      :  16:12:01 up 21 days, 23:42, 14 users,  load average: 0.27, 0.23, 0.20
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:14:01 -----
+disk usage of home : 5%
+my processes       : 13
+load / uptime      :  16:14:01 up 21 days, 23:44, 13 users,  load average: 0.12, 0.19, 0.18
+logs rotated       : 0
+status             : OK (below 90% threshold)
+----- health check at 2026-06-16 16:16:01 -----
+disk usage of home : 5%
+my processes       : 13
+load / uptime      :  16:16:01 up 21 days, 23:46, 13 users,  load average: 0.19, 0.22, 0.19
+logs rotated       : 0
+status             : OK (below 90% threshold)
