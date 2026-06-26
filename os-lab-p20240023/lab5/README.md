@@ -74,19 +74,19 @@ Show the output of your `challenge.c` program joining its threads and exiting gr
 ## Answers to Lab Questions
 
 1. **Why do threads share memory while processes do not (by default)?**
-   > _Your answer here_
+   > Processes do not share memory because they live in different virtual address that the kernel's mmu doesn't allow communicate for safety reason like rogue process causing data corruption; a thread is a sub process that shares the same virtual address space allowing for memory sharing.
 
 2. **Based on the 1:1 mapping, what is the role of an LWP (Lightweight Process) in Linux?**
-   > _Your answer here_
+   > LWP is the kernel's version of the user thread from the context perspective of the kernel.
 
 3. **Why is it restricted to send signals to kernel threads (e.g., `kthreadd` or `kworker`)?**
-   > _Your answer here_
+   > For security reasons, if the signals could interrupt the kernel threads, it could disrupt the system.
 
 4. **Why can't `SIGKILL` (kill -9) be caught by a signal handler?**
-   > _Your answer here_
+   >  it is designed to kill rogue processes with no question asked
 
 ---
 
 ## Reflection
 
-> _What was the most challenging part of managing threads and signals in this lab? How do you think these concepts apply to large-scale applications like web servers or databases?_
+> We can implement threads when trying to serve multiple clients or access, we cannot rely on a single process to manage every users, so by splitting access via process, we could manage user input, network io at ones.
