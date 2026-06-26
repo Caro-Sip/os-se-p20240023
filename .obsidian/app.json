@@ -16,5 +16,5 @@
   "strictLineBreaks": true,
   "foldHeading": true,
   "showLineNumber": false,
-  "vimMode": false
+  "vimMode": true
 }
