@@ -29,16 +29,43 @@ ps -eLo pid,lwp,comm | grep thread_demo
 
 ## Curveball D — per-buyer purchase cap
 
-- **Issued value:** cap = `<N>`
-- **Announced instruction:** <paste>
-- **Live value(s) I acted on:** stock before = `<...>`; order(s) rejected for exceeding
-  the cap = `<...>`; final stock = `<...>`
+- **Issued value:** cap = `6`
+- **Announced instruction:** Add a **per-buyer purchase cap** to your purchase script (`buy_widget`) — reject any single order above it; re-run `swarm` and show the locked result respects the cap and stays consistent.
+- **Live value(s) I acted on:** stock before = `100`; order(s) rejected for exceeding the cap = `Quantity 10 exceeds per-buyer cap of 6`; final stock after swarm = `60`
 - **Commands:**
 
 ```bash
-# add a per-buyer cap to buy_<product>: reject any single order above <N>
-# reset stock, re-run swarm, show it stays consistent AND respects the cap
-<your commands>
+# Add per-buyer cap validation to buy_widget
+# Edit buy_widget to add:
+# PER_BUYER_CAP=6
+# if [ "$QTY" -gt "$PER_BUYER_CAP" ]; then
+#     echo "Error: Order rejected. Quantity $QTY exceeds per-buyer cap of $PER_BUYER_CAP" >&2
+#     exit 1
+# fi
+
+# Test cap rejection:
+echo "100" > stock.txt
+> sales.log
+./scripts/buy_widget "TestBuyer_Large" 10
+# Output: Error: Order rejected. Quantity 10 exceeds per-buyer cap of 6
+
+# Verify rejected order did NOT log:
+./scripts/buy_widget "TestBuyer_Small" 3
+# Verify stock and log:
+cat stock.txt    # Output: 97
+cat sales.log    # Output: 1 line (only the 3-unit purchase)
+
+# Run swarm (40 concurrent buyers × 1 unit each):
+echo "100" > stock.txt
+> sales.log
+./scripts/swarm
+# Output: Final stock value: 60
+
+# Verify consistency (run again):
+echo "100" > stock.txt
+> sales.log
+./scripts/swarm
+# Output: Final stock value: 60
 ```
 
 - **Screenshot:**
