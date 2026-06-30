@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# Output file path
+REPORT_FILE="consolidated_report.txt"
+
+# Clear the report file if it exists
+> "$REPORT_FILE"
+
+# Directories to scan (passed as arguments or default to test directories)
+DIRS=("$@")
+if [ ${#DIRS[@]} -eq 0 ]; then
+    DIRS=("test_dir1" "test_dir2" "non_existent_dir")
+fi
+
+echo "=========================================" >> "$REPORT_FILE"
+echo "CONSOLIDATED FILE REPORT" >> "$REPORT_FILE"
+echo "Generated on: $(date)" >> "$REPORT_FILE"
+echo "=========================================" >> "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+
+echo "Starting scan of directories: ${DIRS[*]}"
+
+for dir in "${DIRS[@]}"; do
+    echo "Scanning directory: $dir"
+    
+    # Check if directory exists and is traversable
+    if [ ! -d "$dir" ]; then
+        echo "[WARNING] Directory '$dir' does not exist. Skipping."
+        echo "=== Directory: $dir (SKIPPED - DOES NOT EXIST) ===" >> "$REPORT_FILE"
+        echo "" >> "$REPORT_FILE"
+        continue
+    fi
+    
+    echo "=== Directory: $dir ===" >> "$REPORT_FILE"
+    
+    # We define standard files we expect or loop over files in directory
+    # Let's list files in the directory. 
+    # Use nullglob to handle empty directories safely
+    shopt -s nullglob
+    files=("$dir"/*)
+    shopt -u nullglob
+    
+    if [ ${#files[@]} -eq 0 ]; then
+        echo "  (No files found)" >> "$REPORT_FILE"
+        echo "" >> "$REPORT_FILE"
+        continue
+    fi
+    
+    for file in "${files[@]}"; do
+        # Test for existence and readability
+        if [ -f "$file" ]; then
+            if [ -r "$file" ]; then
+                echo "  Reading: $file (Success)"
+                echo "--- File: $file ---" >> "$REPORT_FILE"
+                cat "$file" >> "$REPORT_FILE"
+                echo "" >> "$REPORT_FILE"
+                echo "" >> "$REPORT_FILE"
+            else
+                echo "  [SKIP] File '$file' is not readable (Permission Denied)"
+                echo "--- File: $file (SKIPPED - UNREADABLE) ---" >> "$REPORT_FILE"
+                echo "" >> "$REPORT_FILE"
+            fi
+        else
+            echo "  [SKIP] '$file' is not a regular file"
+        fi
+    done
+done
+
+echo "Scan complete. Consolidated report written to $REPORT_FILE."

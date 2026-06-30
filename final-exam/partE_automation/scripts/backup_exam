@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Anchor paths
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+FINAL_EXAM_DIR=$(cd "$SCRIPT_DIR/../.." && pwd)
+BACKUP_DIR="$HOME/exam-backups"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Check if final-exam directory exists
+if [ ! -d "$FINAL_EXAM_DIR" ]; then
+    echo "Error: final-exam directory '$FINAL_EXAM_DIR' does not exist." >&2
+    exit 1
+fi
+
+# Create timestamped filename
+TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
+BACKUP_FILE="$BACKUP_DIR/final-exam-$TIMESTAMP.tar.gz"
+
+echo "Creating compressed archive of final-exam folder..."
+# Back up final-exam. We compress it from the parent directory of final-exam
+PARENT_DIR=$(dirname "$FINAL_EXAM_DIR")
+EXAM_BASE_NAME=$(basename "$FINAL_EXAM_DIR")
+
+tar -czf "$BACKUP_FILE" -C "$PARENT_DIR" "$EXAM_BASE_NAME"
+
+if [ $? -eq 0 ]; then
+    echo "Backup created successfully at: $BACKUP_FILE"
+else
+    echo "Error: Backup failed." >&2
+    exit 1
+fi

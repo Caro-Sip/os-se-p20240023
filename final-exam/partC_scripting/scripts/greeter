@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Define variables using command substitution
+current_user=$(whoami)
+logged_users=$(who | wc -l)
+sys_uptime=$(uptime -p)
+
+# Define an array of messages (>= 3 messages)
+messages=(
+    "Welcome back! Keep up the great engineering work."
+    "System status is optimal. TechCorp widget launch is imminent!"
+    "On-call shift active. Monitoring systems for race conditions."
+    "Automating the infrastructure, one script at a time."
+)
+
+# Select a random message using command substitution and arithmetic
+random_idx=$((RANDOM % ${#messages[@]}))
+selected_msg=${messages[$random_idx]}
+
+# Print the dynamic banner
+echo "========================================="
+echo "TechCorp System Greeting Banner"
+echo "========================================="
+echo "Current User:      $current_user"
+echo "Logged-in Users:   $logged_users"
+echo "System Uptime:     $sys_uptime"
+echo "Random Message:    $selected_msg"
+echo "========================================="

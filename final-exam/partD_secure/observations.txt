@@ -1,0 +1,22 @@
+OS Lab Final Exam - Part D Observations (Race Condition & File Locking)
+
+Product: Widget -> buy_widget
+Initial Stock: 100
+Concurrent Buyers: 40
+Expected Correct Final Stock: 60
+
+=== Unpatched Swarm Runs (NO_LOCK=1) ===
+- Run 1 Final Stock: 99
+- Run 2 Final Stock: 99
+- Run 3 Final Stock: 99
+
+Explanation of Race Condition:
+Without locking, multiple concurrent instances of the `buy_widget` process read the same stale stock value (100) from `stock.txt` before any of them wrote their updated values back. Because the processes ran in parallel, they performed overlapping read-modify-write operations, leading to "lost updates". In this extreme case (due to context switching during the sleep delay), they all read 100 and wrote 99, meaning 39 decrements were lost, and the final stock was 99 instead of 60.
+
+=== Patched Swarm Runs (Locking Enabled via flock) ===
+- Run 1 Final Stock: 60
+- Run 2 Final Stock: 60
+- Run 3 Final Stock: 60
+
+Explanation of the Lock:
+Using a single exclusive advisory lock (`flock`) on a shared lock file (`buy.lock`) ensures that the entire read-modify-write operation (critical section) is executed atomically with respect to other `buy_widget` processes. Only one process can acquire the lock at a time, forcing sequential execution of the critical section. This guarantees that each process reads the most up-to-date stock value, preventing any lost updates and resulting in the correct final stock of 60 every time.

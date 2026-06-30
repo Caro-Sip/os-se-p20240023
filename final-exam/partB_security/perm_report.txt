@@ -1,0 +1,23 @@
+=== B1 Perm Report ===
+--- Directory permissions (ls -ld) ---
+drwx--x--x 2 se-suon-caro se-suon-caro 4096 Jun 30 14:04 partB_security/shared_dir
+--- File permissions (ls -l) ---
+-rw------- 1 se-suon-caro se-suon-caro 33 Jun 30 14:10 partB_security/shared_dir/private_file
+--- Directory stat ---
+  File: partB_security/shared_dir
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 252,0	Inode: 47450392    Links: 2
+Access: (0711/drwx--x--x)  Uid: ( 1143/se-suon-caro)   Gid: ( 1145/se-suon-caro)
+Access: 2026-06-30 14:04:34.064790537 +0700
+Modify: 2026-06-30 14:04:31.536808238 +0700
+Change: 2026-06-30 14:10:00.348484577 +0700
+ Birth: 2026-06-30 14:04:31.516808378 +0700
+--- File stat ---
+  File: partB_security/shared_dir/private_file
+  Size: 33        	Blocks: 8          IO Block: 4096   regular file
+Device: 252,0	Inode: 47450394    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1143/se-suon-caro)   Gid: ( 1145/se-suon-caro)
+Access: 2026-06-30 14:04:51.289669848 +0700
+Modify: 2026-06-30 14:10:00.344484605 +0700
+Change: 2026-06-30 14:10:00.346484591 +0700
+ Birth: 2026-06-30 14:04:31.536808238 +0700

@@ -1,0 +1,28 @@
+=== Crontab Listings (crontab -l) ===
+# E2: Recurring job firing every 1 minute
+*/1 * * * * /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/scripts/timed_job /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/logs/cron_recurring.log
+
+# E2: One-shot job firing at 14:35 today
+35 14 * * * /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/scripts/timed_job /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/logs/cron_oneshot.log
+
+# E3: backup_exam running every 5 minutes (short interval)
+*/5 * * * * /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/scripts/backup_exam
+
+# E3: backup_exam running once at exactly 16:00 today
+0 16 * * * /home/se-suon-caro/os-se-p20240023/final-exam/partE_automation/scripts/backup_exam
+
+
+=== cron_recurring.log ===
+2026-06-30 14:30:00 - Timed job executed successfully by user: se-suon-caro
+2026-06-30 14:31:00 - Timed job executed successfully by user: se-suon-caro
+2026-06-30 14:32:00 - Timed job executed successfully by user: se-suon-caro
+
+
+=== cron_oneshot.log ===
+2026-06-30 14:35:00 - Timed job executed successfully by user: se-suon-caro
+
+
+=== Listing of ~/exam-backups/ ===
+total 160
+-rw-rw-r-- 1 se-suon-caro se-suon-caro  76430 Jun 30 14:30 final-exam-20260630_143000.tar.gz
+-rw-rw-r-- 1 se-suon-caro se-suon-caro  76430 Jun 30 14:35 final-exam-20260630_143500.tar.gz

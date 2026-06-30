@@ -1,0 +1,23 @@
+=========================================
+CONSOLIDATED FILE REPORT
+Generated on: Tue Jun 30 14:28:02 +07 2026
+=========================================
+
+=== Directory: test_dir1 ===
+--- File: test_dir1/file_a.txt ---
+Content of File A (Readable)
+
+
+--- File: test_dir1/file_b.txt (SKIPPED - UNREADABLE) ---
+
+=== Directory: test_dir2 ===
+--- File: test_dir2/file_c.txt ---
+Content of File C (Readable)
+
+
+--- File: test_dir2/file_d.txt ---
+Content of File D (Readable)
+
+
+=== Directory: non_existent_dir (SKIPPED - DOES NOT EXIST) ===
+

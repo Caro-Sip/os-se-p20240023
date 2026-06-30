@@ -1,0 +1,5 @@
+PATH environment variable:
+/home/se-suon-caro/bin:/home/se-suon-caro/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/se-suon-caro/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/se-suon-caro/.vscode-server/cli/servers/Stable-6928394f91b684055b873eecb8bc281365131f1c/server/bin/remote-cli:/home/se-suon-caro/bin:/home/se-suon-caro/bin:/home/se-suon-caro/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/syphon/Documents/carosth/final-exam/partC_scripting/scripts:/home/se-suon-caro/os-se-p20240023/final-exam/partC_scripting/scripts:/home/se-suon-caro/os-se-p20240023/final-exam/partC_scripting/scripts
+
+Resolved location of greeter:
+/home/se-suon-caro/os-se-p20240023/final-exam/partC_scripting/scripts/greeter

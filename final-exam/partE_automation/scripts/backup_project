@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Anchor paths
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+BASE_DIR=$(cd "$SCRIPT_DIR/.." && pwd)
+PROJECT_DIR="$BASE_DIR/project"
+BACKUP_DIR="$BASE_DIR/project_backups"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Check if project directory exists
+if [ ! -d "$PROJECT_DIR" ]; then
+    echo "Error: Project directory '$PROJECT_DIR' does not exist." >&2
+    exit 1
+fi
+
+# Create timestamped backup filename
+TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
+BACKUP_FILE="$BACKUP_DIR/project_backup_$TIMESTAMP.tar.gz"
+
+echo "Creating backup of $PROJECT_DIR..."
+# Compress project directory
+tar -czf "$BACKUP_FILE" -C "$BASE_DIR" project
+
+if [ $? -eq 0 ]; then
+    echo "Backup created successfully: $BACKUP_FILE"
+else
+    echo "Error: Backup compression failed." >&2
+    exit 1
+fi
+
+# Prune old backups, keeping only the 3 newest
+echo "Pruning old backups..."
+# ls -dt lists files by modification time, newest first
+# tail -n +4 skips the first 3 lines (newest) and outputs the rest
+OLD_BACKUPS=$(ls -dt "$BACKUP_DIR"/project_backup_*.tar.gz 2>/dev/null | tail -n +4)
+
+if [ -n "$OLD_BACKUPS" ]; then
+    echo "Deleting old backup files:"
+    echo "$OLD_BACKUPS"
+    echo "$OLD_BACKUPS" | xargs rm -f
+else
+    echo "No pruning needed (3 or fewer backups exist)."
+fi
+
+echo "Active backups in $BACKUP_DIR:"
+ls -la "$BACKUP_DIR"

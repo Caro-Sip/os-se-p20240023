@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Anchor paths
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+BASE_DIR=$(cd "$SCRIPT_DIR/.." && pwd)
+STOCK_FILE="$BASE_DIR/stock.txt"
+SALES_LOG="$BASE_DIR/sales.log"
+LOCK_FILE="$BASE_DIR/buy.lock"
+
+# Validate input
+BUYER="$1"
+QTY="$2"
+
+if [ -z "$BUYER" ] || [ -z "$QTY" ]; then
+    echo "Usage: buy_widget <buyer_name> <quantity>" >&2
+    exit 1
+fi
+
+# Check if QTY is positive integer
+if [[ ! "$QTY" =~ ^[0-9]+$ ]] || [ "$QTY" -le 0 ]; then
+    echo "Error: Quantity must be a positive integer" >&2
+    exit 1
+fi
+
+perform_purchase() {
+    # Read current stock
+    if [ ! -f "$STOCK_FILE" ]; then
+        echo "Error: Stock file does not exist" >&2
+        return 1
+    fi
+    
+    CURRENT_STOCK=$(cat "$STOCK_FILE")
+    
+    # Check if stock is sufficient
+    if [ "$CURRENT_STOCK" -lt "$QTY" ]; then
+        echo "Error: Insufficient stock (requested $QTY, current $CURRENT_STOCK)" >&2
+        return 1
+    fi
+    
+    # Introduce a small artificial delay to make the race condition easy to trigger without locking
+    sleep 0.05
+    
+    # Calculate new stock
+    NEW_STOCK=$((CURRENT_STOCK - QTY))
+    
+    # Write back stock
+    echo "$NEW_STOCK" > "$STOCK_FILE"
+    
+    # Append sales log (includes buyer, qty, student ID p20240023, timestamp)
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Buyer: $BUYER, Qty: $QTY, New Stock: $NEW_STOCK, StudentID: p20240023" >> "$SALES_LOG"
+    
+    return 0
+}
+
+if [ "$NO_LOCK" = "1" ]; then
+    # Run critical section without locking (D2: The Race)
+    perform_purchase
+else
+    # Run critical section with exclusive advisory lock (D3: The Patch)
+    (
+        flock -x 200
+        perform_purchase
+    ) 200>"$LOCK_FILE"
+fi

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Anchor paths
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+BASE_DIR=$(cd "$SCRIPT_DIR/.." && pwd)
+STOCK_FILE="$BASE_DIR/stock.txt"
+SALES_LOG="$BASE_DIR/sales.log"
+BUY_WIDGET="$SCRIPT_DIR/buy_widget"
+
+# Reset stock to 100
+echo "100" > "$STOCK_FILE"
+# Clear sales log
+> "$SALES_LOG"
+
+echo "Initializing swarm. Stock reset to 100. Spawning 40 concurrent buyers..."
+
+# Launch 40 concurrent buyers in the background
+for i in {1..40}; do
+    "$BUY_WIDGET" "Buyer_$i" 1 &
+done
+
+# Wait for all background jobs to finish
+wait
+
+echo "Swarm completed."
+FINAL_STOCK=$(cat "$STOCK_FILE")
+echo "Final stock value: $FINAL_STOCK"
