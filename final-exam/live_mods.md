@@ -76,16 +76,31 @@ echo "100" > stock.txt
 
 ## Curveball E — idempotent timed_job
 
-- **Issued value:** token = `<TOKEN>`
-- **Announced instruction:** <paste>
-- **Live value(s) I acted on:** today's marker line = `<...>`; 1st trigger = ran,
-  2nd trigger = skipped
+- **Issued value:** token = `IDEMPMARK`
+- **Announced instruction:** Make `timed_job` **idempotent** using this marker token — it must refuse to run if the token for today is already in its log; trigger it twice and prove the 2nd was skipped.
+- **Live value(s) I acted on:** today's marker line = `2026-06-30 15:24:05 - IDEMPMARK - Timed job executed successfully by user: se-suon-caro`; 1st trigger = ran, 2nd trigger = skipped
 - **Commands:**
 
 ```bash
-# add a guard to timed_job: refuse to run if today's <TOKEN> entry is already in the log
-# trigger it twice and show the 2nd run was skipped
-<your commands>
+# Add idempotency guard to timed_job
+# Check if IDEMPMARK token for today already exists in log
+# If yes, skip execution; if no, run and append line with token + date
+
+# Test idempotency:
+> logs/test_idempotent.log
+
+# First run (should execute and log)
+./scripts/timed_job logs/test_idempotent.log
+# Output: (nothing printed, job runs)
+
+# Second run (should skip)
+./scripts/timed_job logs/test_idempotent.log
+# Output: Job already executed today (IDEMPMARK found for 2026-06-30), skipping.
+
+# Verify log has only 1 entry
+cat logs/test_idempotent.log
+wc -l logs/test_idempotent.log
+# Output: 1 logs/test_idempotent.log
 ```
 
 - **Screenshot:**

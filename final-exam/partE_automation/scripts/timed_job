@@ -1,7 +1,5 @@
 #!/bin/bash
-
 OUTPUT_FILE="$1"
-
 if [ -z "$OUTPUT_FILE" ]; then
     echo "Usage: timed_job <output_file>" >&2
     exit 1
@@ -10,5 +8,17 @@ fi
 # Create directory for output file if it doesn't exist
 mkdir -p "$(dirname "$OUTPUT_FILE")"
 
-# Append timestamped line
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Timed job executed successfully by user: $(whoami)" >> "$OUTPUT_FILE"
+# === CURVEBALL E: Idempotency guard using IDEMPMARK token ===
+IDEMPMARK="IDEMPMARK"
+TODAY=$(date '+%Y-%m-%d')
+
+# Check if this job has already run today
+if [ -f "$OUTPUT_FILE" ]; then
+    if grep -F "IDEMPMARK" "$OUTPUT_FILE" | grep -q "$TODAY"; then
+        echo "Job already executed today (IDEMPMARK found for $TODAY), skipping." >&2
+        exit 0
+    fi
+fi
+
+# Append timestamped line with IDEMPMARK token
+echo "$(date '+%Y-%m-%d %H:%M:%S') - $IDEMPMARK - Timed job executed successfully by user: $(whoami)" >> "$OUTPUT_FILE"
