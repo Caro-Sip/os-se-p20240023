@@ -65,6 +65,51 @@ int main() {
         total_sum += val;
     }
     
-    printf("Summary: All threads joined successfully. Total Sum of Computed Values = %ld\n", total_sum);
+    printf("Summary: Original %d threads joined successfully. Total Sum = %ld\n", NUM_THREADS, total_sum);
+    printf("\n=== CURVEBALL A: Spawning 2 EXTRA worker threads (ONLY after originals joined) ===\n\n");
+    
+    // === CURVEBALL A: Spawn 2 extra workers AFTER originals have joined ===
+    pthread_t extra_threads[2];
+    thread_data_t extra_data[2];
+    
+    for (int i = 0; i < 2; i++) {
+        extra_data[i].thread_idx = NUM_THREADS + i;  // IDs 5, 6
+        rc = pthread_create(&extra_threads[i], NULL, worker_thread, &extra_data[i]);
+        if (rc) {
+            fprintf(stderr, "Error: pthread_create failed for extra worker %d\n", i);
+            exit(EXIT_FAILURE);
+        }
+    }
+    
+    printf("Main thread: Extra workers spawned. PID = %d\n", getpid());
+    printf(">>> NOW: In another terminal, run: ps -eLo pid,lwp,comm | grep thread_demo\n");
+    printf(">>> You should see 3 LWPs (threads 5, 6, and main) for the next ~10 seconds\n");
+    printf("Main thread: Waiting 10 seconds before joining extra workers...\n\n");
+    
+    sleep(10);  // Give time to observe LWPs in other terminal
+    
+    printf("\n>>> Now joining the 2 extra threads...\n\n");
+    
+    // Join the 2 extra threads
+    long extra_sum = 0;
+    for (int i = 0; i < 2; i++) {
+        void* status;
+        rc = pthread_join(extra_threads[i], &status);
+        if (rc) {
+            fprintf(stderr, "Error: pthread_join failed for extra worker\n");
+            exit(EXIT_FAILURE);
+        }
+        long val = (long)status;
+        printf("Main thread: Joined Extra Worker %d, collected result = %ld\n", NUM_THREADS + i, val);
+        extra_sum += val;
+    }
+    
+    printf("\n=== FINAL SUMMARY ===\n");
+    printf("Original 5 workers sum: %ld\n", total_sum);
+    printf("Extra 2 workers sum: %ld\n", extra_sum);
+    printf("Total workers: 7 (5 original + 2 extra)\n");
+    printf("All threads joined successfully.\n");
+    printf(">>> NOW: Verify extra threads are GONE: ps -eLo pid,lwp,comm | grep thread_demo\n");
+    printf(">>> You should only see 1 LWP (main thread) or no results\n");
     return 0;
 }

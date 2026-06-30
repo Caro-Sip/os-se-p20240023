@@ -9,15 +9,16 @@
 
 ## Curveball A — extra worker(s) that start after the others join
 
-- **Issued value:** `<N>` extra worker(s)
-- **Announced instruction:** <paste exactly what was announced>
-- **Live value(s) I acted on:** base PID = `<...>`; new LWP id(s) that appeared = `<...>`
+- **Issued value:** `2` extra worker(s)
+- **Announced instruction:** Edit `thread_demo.c` to spawn this many **extra** workers that start **only after** the originals have joined; show the new LWP(s) appear in the mapping then disappear.
+- **Live value(s) I acted on:** base PID = `23312`; new LWP id(s) that appeared = `23398, 23399`
 - **Commands:**
 
 ```bash
-# edit thread_demo.c to spawn N extra workers only AFTER the originals join
-# recompile, run, and capture the mapping showing the new LWP(s) appear then vanish
-<your commands>
+gcc -pthread -o thread_demo thread_demo.c
+./thread_demo
+# In another terminal, while extra workers sleep (within 10-second window):
+ps -eLo pid,lwp,comm | grep thread_demo
 ```
 
 - **Screenshot:**
